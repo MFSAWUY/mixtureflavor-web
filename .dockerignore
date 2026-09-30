@@ -6,6 +6,9 @@
 .venv
 runtime
 private-backups
+sites-preview
+.sites-template
+frontend/dist-showcase
 release
 tests
 docs

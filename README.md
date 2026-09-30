@@ -25,6 +25,42 @@ cd D:\VSCode_data\Python\Mixture-fla\mixtureflavor-web
 
 管理员入口在网页底部，用户名与随机密码位于 **`runtime/local.env`**。密码不会写在 README、源代码或部署包里。首次运行会自动生成，后续启动保留原值。管理员登录后可查看原始输入和结果、导出记录、逐条删除、手动备份。
 
+## 提交记录与测试数据在哪里
+
+本地管理页为 `http://127.0.0.1:8000/#admin`。以下路径均相对于本项目目录：
+
+| 内容 | 位置 | 区别 |
+| --- | --- | --- |
+| 网页提交记录 | `runtime/submissions.sqlite3`，表 `submissions` | 保存输入分子、预测结果、时间、版本和状态；不是 CSV 文本文件 |
+| 管理员凭据 | `runtime/local.env` | 仅用于本机登录，不属于预测数据 |
+| 数据库备份 | `runtime/backups/` | 定期及手动备份，轮换保留最近 7 个快照 |
+| 自动化测试代码 | `tests/`、`frontend/tests/` | 检查功能是否正常的程序，应该提交 Git |
+| 自动化测试数据库 | `runtime/test-*/各测试名称/records.sqlite3` | 每轮测试单独创建，不写入网站记录库 |
+| 本机压力测试数据库 | `runtime/benchmark-*/records.sqlite3` | 默认使用单独启动的临时服务 |
+| 原预测器展示样例 | `examples/examples.json` | 已保存的原预测器输出，不是访客记录 |
+| 静态展示数据 | `frontend/public/showcase-data.json` | 三组公开示例的结构与结果；无用户记录、提交时间或实时耗时 |
+
+**人工在网页上提交示例，也会写入 `submissions.sqlite3`。** 当前没有自动识别“人工测试访客”的字段。结构预览不会写预测记录；上传 CSV/SDF 后保存的是提交预测的分子与结果，不单独归档原上传文件。`benchmark.py --url ...` 会向指定服务写压力测试记录，区别于默认隔离模式。
+
+Docker 部署后，记录位于 API 容器的 `/data/submissions.sqlite3`，实际保存在 `flavor-data` 持久卷；它不会自动同步到本机的 `runtime/`。管理员仍通过网页管理。不要直接覆盖正在使用的数据库，备份和恢复请按部署说明执行。
+
+## Git 与 Sites 展示版
+
+本目录是独立 Git 仓库，分支为 `main`。源码、模型、公开样例和测试纳入版本管理；用户数据、密码、依赖、缓存、备份和压缩包已忽略。`vendor/` 和 `examples/` 的换行转换被禁用，以保持模型校验清单与公开样例的来源哈希逐字节一致。没有设置 GitHub 远程仓库，也没有修改原项目或父目录。
+
+展示版保留中英文介绍、方法、三个示例、结构图、分数、基线差值、注意力以及导出。它不接收任意分子上传，不运行模型，不保存用户预测记录；语言偏好保存在浏览器。默认生产构建仍是本地实时预测完整版。
+
+Sites 展示版已于 2026-09-30 私有发布：[打开 MixtureFlavor 展示网站](https://mixtureflavor-showcase.anna-chuang-5992.chatgpt.site)。当前仅所有者账号可访问。发布状态、验证范围及尚待复核事项见 [Sites 验收记录](docs/verification/SITES_ACCEPTANCE.md)。
+
+```powershell
+# 只有模型/样例改变时才需重新生成；不接触用户数据库
+& 'D:\anaconda3\envs\flavor\python.exe' scripts/prepare_showcase.py
+npm run build:showcase --prefix frontend -- --outDir dist-showcase
+npm run preview --prefix frontend -- --outDir dist-showcase --port 5174 --strictPort
+```
+
+使用 Vite 预览服务，避免 Windows 注册表把 JavaScript 识别为 `text/plain` 导致空白页。Sites 发布与版本说明见 [docs/SITES.md](docs/SITES.md)。
+
 ## 展示流程
 
 1. 打开「在线预测」，选择「单分子」「两组分混合」「批量比较」示例，或输入自己的 SMILES / 上传文件。
@@ -123,6 +159,6 @@ npm run build --prefix frontend
 
 ## 服务器与其他托管方式
 
-参见 [部署、备份与恢复手册](deploy/README.md) 和 [接口说明](docs/API.md)。首版配置面向 Linux x86-64 CPU、Docker Compose、同机同域名。当前没有购买服务器或域名，没有进行公网发布。
+参见 [部署、备份与恢复手册](deploy/README.md) 和 [接口说明](docs/API.md)。首版配置面向 Linux x86-64 CPU、Docker Compose、同机同域名。当前没有购买服务器或域名；预计算展示版已发布到 Sites，Python 实时预测完整版尚未部署到云服务器。
 
 可将同一个前端构建放到静态托管平台，但动态预测和提交数据库仍需后端。当前浏览器请求使用同源 `/api`，所以 Vercel 等平台需要将该路径反向代理到模型服务；GitHub Pages 无原生同域代理，需要额外适配 API 地址与明确的 CORS 来源后才能在线预测。直接上传前端不能获得 Python 推理能力。学校服务器和本地演示均可使用本包。

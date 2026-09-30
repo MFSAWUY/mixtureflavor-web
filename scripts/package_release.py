@@ -6,7 +6,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 DIRECTORIES = ['backend', 'frontend/src', 'frontend/tests', 'frontend/public', 'frontend/dist', 'vendor', 'examples', 'deploy', 'docs', 'scripts', 'tests']
-FILES = ['README.md', 'START_LOCAL.ps1', 'compose.yaml', '.env.example', '.dockerignore', '.gitignore',
+FILES = ['README.md', 'START_LOCAL.ps1', 'compose.yaml', '.env.example', '.dockerignore', '.gitignore', '.gitattributes',
          'frontend/package.json', 'frontend/package-lock.json', 'frontend/tsconfig.json', 'frontend/vite.config.ts', 'frontend/index.html']
 
 

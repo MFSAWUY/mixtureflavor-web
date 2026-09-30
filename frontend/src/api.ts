@@ -1,4 +1,4 @@
-import type { Lang, Localized, Prediction } from './types'
+import type { Lang, Localized, DisplayPrediction } from './types'
 
 export class ApiError extends Error {
   messages: Localized
@@ -41,14 +41,16 @@ function csvCell(value: unknown): string {
   return '"' + text.replaceAll('"', '""') + '"'
 }
 
-export function predictionBlob(result: Prediction, format: 'json' | 'csv'): Blob {
+export function predictionBlob(result: DisplayPrediction, format: 'json' | 'csv'): Blob {
   if (format === 'json') return new Blob([JSON.stringify(result, null, 2)], { type: 'application/json' })
-  const rows: unknown[][] = [['record_id', 'created_at', 'model_version', 'dataset_kind', 'type', 'name', 'smiles', 'label', 'score', 'baseline_score', 'score_delta', 'notice']]
-  const prefix = [result.record_id, result.created_at, result.model_version, result.dataset_kind]
-  result.molecules.forEach(m => m.scores.forEach(s => rows.push([...prefix, 'single_molecule', m.name, m.smiles, s.label, s.score, '', '', result.notice.en])))
+  const precomputed = 'example_id' in result
+  const rows: unknown[][] = [[...(precomputed ? ['example_id', 'result_kind'] : ['record_id', 'created_at']), 'model_version', 'dataset_kind', 'type', 'name', 'smiles', 'label', 'score', 'baseline_score', 'score_delta', 'notice']]
+  const prefix = [...(precomputed ? [result.example_id, result.result_kind] : [result.record_id, result.created_at]), result.model_version, result.dataset_kind]
+  const notice = (precomputed ? result.provenance.en + ' ' : '') + result.notice.en
+  result.molecules.forEach(m => m.scores.forEach(s => rows.push([...prefix, 'single_molecule', m.name, m.smiles, s.label, s.score, '', '', notice])))
   if (result.mixture) {
     const mix = result.mixture
-    mix.scores.forEach(s => rows.push([...prefix, 'mixture', 'Mixture', result.molecules.map(x => x.smiles).join(' | '), s.label, s.score, mix.baseline_scores.find(x => x.label === s.label)?.score, mix.deltas.find(x => x.label === s.label)?.score, result.notice.en]))
+    mix.scores.forEach(s => rows.push([...prefix, 'mixture', 'Mixture', result.molecules.map(x => x.smiles).join(' | '), s.label, s.score, mix.baseline_scores.find(x => x.label === s.label)?.score, mix.deltas.find(x => x.label === s.label)?.score, notice]))
   }
   return new Blob(['\ufeff' + rows.map(row => row.map(csvCell).join(',')).join('\r\n')], { type: 'text/csv;charset=utf-8' })
 }

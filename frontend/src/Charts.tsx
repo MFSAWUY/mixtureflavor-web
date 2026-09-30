@@ -9,12 +9,12 @@ import type { Lang } from './types'
 
 echarts.use([BarChart, HeatmapChart, RadarChart, GridComponent, LegendComponent, MarkLineComponent, RadarComponent, TooltipComponent, VisualMapComponent, CanvasRenderer])
 
-export function Chart({ option, height = 280, title, lang, filename }: { option: echarts.EChartsCoreOption; height?: number; title: string; lang: Lang; filename: string }) {
+export function Chart({ option, height = 280, title, lang, filename, precomputed = false }: { option: echarts.EChartsCoreOption; height?: number; title: string; lang: Lang; filename: string; precomputed?: boolean }) {
   const element = useRef<HTMLDivElement>(null)
   const instance = useRef<echarts.EChartsType | null>(null)
   const latest = useRef(option)
   latest.current = option
-  const caption = lang === 'zh' ? '合成数据演示 · 分数不等同于实测风味强度' : 'Synthetic-benchmark demo · scores are not measured intensities'
+  const caption = (precomputed ? (lang === 'zh' ? '预计算示例 · ' : 'Precomputed example · ') : '') + (lang === 'zh' ? '合成数据演示 · 分数不等同于实测风味强度' : 'Synthetic demo · scores are not measured intensities')
   useEffect(() => {
     if (!element.current) return
     function resize() {
@@ -56,7 +56,7 @@ export function Chart({ option, height = 280, title, lang, filename }: { option:
     context.fillText(filename, 28, canvas.height - 28, canvas.width - 56)
     canvas.toBlob(blob => { if (blob) download(blob, filename + '.png') }, 'image/png')
   }
-  return <div className="chart-frame"><div className="chart-title"><span>{title}</span><button className="icon-button" type="button" onClick={save} title={lang === 'zh' ? '下载此图（PNG）' : 'Download chart (PNG)'} aria-label={lang === 'zh' ? '下载此图（PNG）' : 'Download chart (PNG)'}><Download size={15} /></button></div><div ref={element} style={{ height }} role="img" aria-label={title} /><div className="chart-caption">{lang === 'zh' ? '合成数据演示 · 分数不等同于实测风味强度' : 'Synthetic-benchmark demo · scores are not measured intensities'}</div></div>
+  return <div className="chart-frame"><div className="chart-title"><span>{title}</span><button className="icon-button" type="button" onClick={save} title={lang === 'zh' ? '下载此图（PNG）' : 'Download chart (PNG)'} aria-label={lang === 'zh' ? '下载此图（PNG）' : 'Download chart (PNG)'}><Download size={15} /></button></div><div ref={element} style={{ height }} role="img" aria-label={title} /><div className="chart-caption">{caption}</div></div>
 }
 
 export const tooltip = { trigger: 'axis', renderMode: 'richText', confine: true } as const

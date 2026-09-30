@@ -1,0 +1,1509 @@
+{
+  "schema_version": 1,
+  "meta": {
+    "model_version": "mf-web-1.0.0-3908eb30-3a29d214",
+    "dataset_kind": "synthetic_benchmark",
+    "notice": {
+      "zh": "合成数据演示模型。分数并非实测风味强度；增强/减弱为相对模型内部基线的预测变化。注意力不代表因果作用或受体竞争。",
+      "en": "Synthetic-benchmark demo. Scores are not measured flavor intensities. Changes are relative to the model's internal baseline. Attention is not evidence of causality or receptor competition."
+    },
+    "labels": [
+      {
+        "id": "sweet",
+        "en": "sweet",
+        "zh": "甜味"
+      },
+      {
+        "id": "bitter",
+        "en": "bitter",
+        "zh": "苦味"
+      },
+      {
+        "id": "sour",
+        "en": "sour",
+        "zh": "酸味"
+      },
+      {
+        "id": "salty",
+        "en": "salty",
+        "zh": "咸味"
+      },
+      {
+        "id": "umami",
+        "en": "umami",
+        "zh": "鲜味"
+      },
+      {
+        "id": "fruity",
+        "en": "fruity",
+        "zh": "果香"
+      },
+      {
+        "id": "floral",
+        "en": "floral",
+        "zh": "花香"
+      },
+      {
+        "id": "spicy",
+        "en": "spicy",
+        "zh": "辛香"
+      },
+      {
+        "id": "herbal",
+        "en": "herbal",
+        "zh": "草本"
+      },
+      {
+        "id": "fatty",
+        "en": "fatty",
+        "zh": "脂香"
+      },
+      {
+        "id": "smoky",
+        "en": "smoky",
+        "zh": "烟熏"
+      },
+      {
+        "id": "nutty",
+        "en": "nutty",
+        "zh": "坚果"
+      },
+      {
+        "id": "caramel",
+        "en": "caramel",
+        "zh": "焦糖"
+      },
+      {
+        "id": "vanilla",
+        "en": "vanilla",
+        "zh": "香草"
+      },
+      {
+        "id": "citrus",
+        "en": "citrus",
+        "zh": "柑橘"
+      },
+      {
+        "id": "mint",
+        "en": "mint",
+        "zh": "薄荷"
+      },
+      {
+        "id": "woody",
+        "en": "woody",
+        "zh": "木香"
+      },
+      {
+        "id": "earthy",
+        "en": "earthy",
+        "zh": "泥土"
+      },
+      {
+        "id": "sulfurous",
+        "en": "sulfurous",
+        "zh": "硫香"
+      },
+      {
+        "id": "alcoholic",
+        "en": "alcoholic",
+        "zh": "酒香"
+      },
+      {
+        "id": "astringent",
+        "en": "astringent",
+        "zh": "涩感"
+      },
+      {
+        "id": "cooling",
+        "en": "cooling",
+        "zh": "清凉"
+      },
+      {
+        "id": "metallic",
+        "en": "metallic",
+        "zh": "金属"
+      },
+      {
+        "id": "kokumi",
+        "en": "kokumi",
+        "zh": "厚味"
+      }
+    ],
+    "metrics": {
+      "single": {
+        "macro_auroc": 0.7569372866991915,
+        "macro_average_precision": 0.5664788749610177,
+        "macro_f1": 0.36789021164021163,
+        "best_macro_f1": 0.36789021164021163,
+        "best_f1_threshold": 0.5,
+        "exact_match_ratio": 0.0,
+        "hamming_loss": 0.36666666666666664,
+        "eval_loss": 0.7556270360946655
+      },
+      "mixture": {
+        "macro_auroc": 0.9736348898555502,
+        "macro_average_precision": 0.9326880283141815,
+        "macro_f1": 0.8798360915961662,
+        "best_macro_f1": 0.8798360915961662,
+        "best_f1_threshold": 0.5,
+        "exact_match_ratio": 0.2798053527980535,
+        "hamming_loss": 0.05910381184103812,
+        "expected_calibration_error": 0.06798446219073062,
+        "synergy_detection_rate": 0.9289473684210526,
+        "antagonism_detection_rate": 0.9302325581395349,
+        "interaction_delta_score": 2.412109375,
+        "interacting_delta_score": 1.28125,
+        "non_interacting_delta_score": 2.48046875,
+        "mean_lift_score": 1.2399767637252808,
+        "counterfactual_accuracy": 0.7789473533630371,
+        "eval_loss": 0.606682939188821,
+        "eval_mixture_loss": 0.26437328117234365,
+        "eval_baseline_loss": 0.5969477210726056,
+        "eval_sparse_loss": 2.410435267857143,
+        "eval_delta_supervision_loss": 0.0789250268467835
+      }
+    },
+    "device": "cpu",
+    "parameter_count": 5867106,
+    "storage_notice": {
+      "zh": "本页展示预计算示例，不接收或保存用户分子提交。语言偏好仅保存在当前浏览器。",
+      "en": "This site displays precomputed examples and does not accept or store molecular submissions. Language preference is saved only in this browser."
+    }
+  },
+  "provenance": {
+    "zh": "由随项目保存的模型权重预先计算；分数已与复制的原始预测器示例核对。页面切换不会运行模型。",
+    "en": "Precomputed with the model checkpoints included in the project and checked against the copied original predictors. Switching examples does not run inference."
+  },
+  "source_examples_sha256": "58d23a1d4ae5ffb0a2c75d1785c3b37b5f81106f9b16a6b74889722e0809e762",
+  "examples": [
+    {
+      "id": "single",
+      "name": {
+        "zh": "从一个分子开始",
+        "en": "Start with one molecule"
+      },
+      "description": {
+        "zh": "乙醇 · 单分子风味预测",
+        "en": "Ethanol · single-molecule prediction"
+      },
+      "mode": "single",
+      "structures": [
+        {
+          "id": "M001",
+          "name": "Ethanol",
+          "smiles": "CCO",
+          "canonical_smiles": "CCO",
+          "formula": "C2H6O",
+          "molecular_weight": 46.07,
+          "atom_count": 3,
+          "fragment_count": 1,
+          "svg": "<?xml version='1.0' encoding='iso-8859-1'?>\n<svg version='1.1' baseProfile='full'\n              xmlns='http://www.w3.org/2000/svg'\n                      xmlns:rdkit='http://www.rdkit.org/xml'\n                      xmlns:xlink='http://www.w3.org/1999/xlink'\n                  xml:space='preserve'\nwidth='320px' height='190px' viewBox='0 0 320 190'>\n<!-- END OF HEADER -->\n<path class='bond-0 atom-0 atom-1' d='M 23.0,121.5 L 140.2,53.8' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-1 atom-1 atom-2' d='M 140.2,53.8 L 190.1,82.6' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-1 atom-1 atom-2' d='M 190.1,82.6 L 240.0,111.4' style='fill:none;fill-rule:evenodd;stroke:#FF0000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path d='M 134.4,57.2 L 140.2,53.8 L 142.7,55.2' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />\n<path class='atom-2' d='M 244.4 121.5\nQ 244.4 114.7, 247.8 110.9\nQ 251.2 107.1, 257.4 107.1\nQ 263.7 107.1, 267.1 110.9\nQ 270.4 114.7, 270.4 121.5\nQ 270.4 128.4, 267.0 132.3\nQ 263.6 136.2, 257.4 136.2\nQ 251.2 136.2, 247.8 132.3\nQ 244.4 128.5, 244.4 121.5\nM 257.4 133.0\nQ 261.8 133.0, 264.1 130.1\nQ 266.4 127.2, 266.4 121.5\nQ 266.4 116.0, 264.1 113.2\nQ 261.8 110.3, 257.4 110.3\nQ 253.1 110.3, 250.8 113.1\nQ 248.4 115.9, 248.4 121.5\nQ 248.4 127.3, 250.8 130.1\nQ 253.1 133.0, 257.4 133.0\n' fill='#FF0000'/>\n<path class='atom-2' d='M 274.8 107.5\nL 278.7 107.5\nL 278.7 119.5\nL 293.2 119.5\nL 293.2 107.5\nL 297.0 107.5\nL 297.0 135.8\nL 293.2 135.8\nL 293.2 122.7\nL 278.7 122.7\nL 278.7 135.8\nL 274.8 135.8\nL 274.8 107.5\n' fill='#FF0000'/>\n</svg>\n"
+        }
+      ],
+      "result": {
+        "mode": "single",
+        "molecules": [
+          {
+            "id": "M001",
+            "name": "Ethanol",
+            "smiles": "CCO",
+            "canonical_smiles": "CCO",
+            "scores": [
+              {
+                "label": "sweet",
+                "score": 0.5451013445854187
+              },
+              {
+                "label": "bitter",
+                "score": 0.3691164255142212
+              },
+              {
+                "label": "sour",
+                "score": 0.5051630139350891
+              },
+              {
+                "label": "salty",
+                "score": 0.4647761881351471
+              },
+              {
+                "label": "umami",
+                "score": 0.5280254483222961
+              },
+              {
+                "label": "fruity",
+                "score": 0.515968382358551
+              },
+              {
+                "label": "floral",
+                "score": 0.39855897426605225
+              },
+              {
+                "label": "spicy",
+                "score": 0.5282334089279175
+              },
+              {
+                "label": "herbal",
+                "score": 0.34333619475364685
+              },
+              {
+                "label": "fatty",
+                "score": 0.3882928192615509
+              },
+              {
+                "label": "smoky",
+                "score": 0.5057616233825684
+              },
+              {
+                "label": "nutty",
+                "score": 0.4724424183368683
+              },
+              {
+                "label": "caramel",
+                "score": 0.511379063129425
+              },
+              {
+                "label": "vanilla",
+                "score": 0.44785991311073303
+              },
+              {
+                "label": "citrus",
+                "score": 0.47836774587631226
+              },
+              {
+                "label": "mint",
+                "score": 0.52320796251297
+              },
+              {
+                "label": "woody",
+                "score": 0.3772647976875305
+              },
+              {
+                "label": "earthy",
+                "score": 0.4908113479614258
+              },
+              {
+                "label": "sulfurous",
+                "score": 0.4724898934364319
+              },
+              {
+                "label": "alcoholic",
+                "score": 0.591463029384613
+              },
+              {
+                "label": "astringent",
+                "score": 0.5680157542228699
+              },
+              {
+                "label": "cooling",
+                "score": 0.5483054518699646
+              },
+              {
+                "label": "metallic",
+                "score": 0.5765405893325806
+              },
+              {
+                "label": "kokumi",
+                "score": 0.5282623767852783
+              }
+            ]
+          }
+        ],
+        "mixture": null,
+        "model_version": "mf-web-1.0.0-3908eb30-3a29d214",
+        "dataset_kind": "synthetic_benchmark",
+        "notice": {
+          "zh": "合成数据演示模型。分数并非实测风味强度；增强/减弱为相对模型内部基线的预测变化。注意力不代表因果作用或受体竞争。",
+          "en": "Synthetic-benchmark demo. Scores are not measured flavor intensities. Changes are relative to the model's internal baseline. Attention is not evidence of causality or receptor competition."
+        },
+        "result_kind": "precomputed_example",
+        "example_id": "single",
+        "provenance": {
+          "zh": "由随项目保存的模型权重预先计算；分数已与复制的原始预测器示例核对。页面切换不会运行模型。",
+          "en": "Precomputed with the model checkpoints included in the project and checked against the copied original predictors. Switching examples does not run inference."
+        },
+        "storage_notice": {
+          "zh": "本页展示预计算示例，不接收或保存用户分子提交。语言偏好仅保存在当前浏览器。",
+          "en": "This site displays precomputed examples and does not accept or store molecular submissions. Language preference is saved only in this browser."
+        }
+      }
+    },
+    {
+      "id": "mixture",
+      "name": {
+        "zh": "探索混合后的变化",
+        "en": "Explore a mixture"
+      },
+      "description": {
+        "zh": "乙醇 + 乙酸 · 两组分混合物",
+        "en": "Ethanol + acetic acid · two components"
+      },
+      "mode": "mixture",
+      "structures": [
+        {
+          "id": "M001",
+          "name": "Ethanol",
+          "smiles": "CCO",
+          "canonical_smiles": "CCO",
+          "formula": "C2H6O",
+          "molecular_weight": 46.07,
+          "atom_count": 3,
+          "fragment_count": 1,
+          "svg": "<?xml version='1.0' encoding='iso-8859-1'?>\n<svg version='1.1' baseProfile='full'\n              xmlns='http://www.w3.org/2000/svg'\n                      xmlns:rdkit='http://www.rdkit.org/xml'\n                      xmlns:xlink='http://www.w3.org/1999/xlink'\n                  xml:space='preserve'\nwidth='320px' height='190px' viewBox='0 0 320 190'>\n<!-- END OF HEADER -->\n<path class='bond-0 atom-0 atom-1' d='M 23.0,121.5 L 140.2,53.8' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-1 atom-1 atom-2' d='M 140.2,53.8 L 190.1,82.6' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-1 atom-1 atom-2' d='M 190.1,82.6 L 240.0,111.4' style='fill:none;fill-rule:evenodd;stroke:#FF0000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path d='M 134.4,57.2 L 140.2,53.8 L 142.7,55.2' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />\n<path class='atom-2' d='M 244.4 121.5\nQ 244.4 114.7, 247.8 110.9\nQ 251.2 107.1, 257.4 107.1\nQ 263.7 107.1, 267.1 110.9\nQ 270.4 114.7, 270.4 121.5\nQ 270.4 128.4, 267.0 132.3\nQ 263.6 136.2, 257.4 136.2\nQ 251.2 136.2, 247.8 132.3\nQ 244.4 128.5, 244.4 121.5\nM 257.4 133.0\nQ 261.8 133.0, 264.1 130.1\nQ 266.4 127.2, 266.4 121.5\nQ 266.4 116.0, 264.1 113.2\nQ 261.8 110.3, 257.4 110.3\nQ 253.1 110.3, 250.8 113.1\nQ 248.4 115.9, 248.4 121.5\nQ 248.4 127.3, 250.8 130.1\nQ 253.1 133.0, 257.4 133.0\n' fill='#FF0000'/>\n<path class='atom-2' d='M 274.8 107.5\nL 278.7 107.5\nL 278.7 119.5\nL 293.2 119.5\nL 293.2 107.5\nL 297.0 107.5\nL 297.0 135.8\nL 293.2 135.8\nL 293.2 122.7\nL 278.7 122.7\nL 278.7 135.8\nL 274.8 135.8\nL 274.8 107.5\n' fill='#FF0000'/>\n</svg>\n"
+        },
+        {
+          "id": "M002",
+          "name": "Acetic acid",
+          "smiles": "CC(=O)O",
+          "canonical_smiles": "CC(=O)O",
+          "formula": "C2H4O2",
+          "molecular_weight": 60.05,
+          "atom_count": 4,
+          "fragment_count": 1,
+          "svg": "<?xml version='1.0' encoding='iso-8859-1'?>\n<svg version='1.1' baseProfile='full'\n              xmlns='http://www.w3.org/2000/svg'\n                      xmlns:rdkit='http://www.rdkit.org/xml'\n                      xmlns:xlink='http://www.w3.org/1999/xlink'\n                  xml:space='preserve'\nwidth='320px' height='190px' viewBox='0 0 320 190'>\n<!-- END OF HEADER -->\n<path class='bond-0 atom-0 atom-1' d='M 58.4,166.4 L 141.1,118.7' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-1 atom-1 atom-2' d='M 148.3,122.8 L 148.3,81.6' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-1 atom-1 atom-2' d='M 148.3,81.6 L 148.3,40.4' style='fill:none;fill-rule:evenodd;stroke:#FF0000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-1 atom-1 atom-2' d='M 133.9,122.8 L 133.9,81.6' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-1 atom-1 atom-2' d='M 133.9,81.6 L 133.9,40.4' style='fill:none;fill-rule:evenodd;stroke:#FF0000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-2 atom-1 atom-3' d='M 141.1,118.7 L 174.7,138.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-2 atom-1 atom-3' d='M 174.7,138.0 L 208.2,157.4' style='fill:none;fill-rule:evenodd;stroke:#FF0000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path d='M 137.0,121.0 L 141.1,118.7 L 142.8,119.6' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />\n<path class='atom-2' d='M 128.7 23.3\nQ 128.7 16.8, 131.9 13.1\nQ 135.1 9.5, 141.1 9.5\nQ 147.1 9.5, 150.3 13.1\nQ 153.5 16.8, 153.5 23.3\nQ 153.5 29.8, 150.3 33.6\nQ 147.0 37.3, 141.1 37.3\nQ 135.2 37.3, 131.9 33.6\nQ 128.7 29.9, 128.7 23.3\nM 141.1 34.2\nQ 145.2 34.2, 147.4 31.5\nQ 149.7 28.7, 149.7 23.3\nQ 149.7 17.9, 147.4 15.3\nQ 145.2 12.6, 141.1 12.6\nQ 137.0 12.6, 134.7 15.2\nQ 132.5 17.9, 132.5 23.3\nQ 132.5 28.7, 134.7 31.5\nQ 137.0 34.2, 141.1 34.2\n' fill='#FF0000'/>\n<path class='atom-3' d='M 211.4 166.5\nQ 211.4 160.0, 214.6 156.4\nQ 217.8 152.7, 223.8 152.7\nQ 229.8 152.7, 233.0 156.4\nQ 236.2 160.0, 236.2 166.5\nQ 236.2 173.1, 233.0 176.8\nQ 229.7 180.5, 223.8 180.5\nQ 217.8 180.5, 214.6 176.8\nQ 211.4 173.1, 211.4 166.5\nM 223.8 177.4\nQ 227.9 177.4, 230.1 174.7\nQ 232.4 171.9, 232.4 166.5\nQ 232.4 161.2, 230.1 158.5\nQ 227.9 155.8, 223.8 155.8\nQ 219.7 155.8, 217.4 158.5\nQ 215.2 161.1, 215.2 166.5\nQ 215.2 171.9, 217.4 174.7\nQ 219.7 177.4, 223.8 177.4\n' fill='#FF0000'/>\n<path class='atom-3' d='M 240.4 153.0\nL 244.1 153.0\nL 244.1 164.5\nL 257.9 164.5\nL 257.9 153.0\nL 261.6 153.0\nL 261.6 180.1\nL 257.9 180.1\nL 257.9 167.6\nL 244.1 167.6\nL 244.1 180.1\nL 240.4 180.1\nL 240.4 153.0\n' fill='#FF0000'/>\n</svg>\n"
+        }
+      ],
+      "result": {
+        "mode": "mixture",
+        "molecules": [
+          {
+            "id": "M001",
+            "name": "Ethanol",
+            "smiles": "CCO",
+            "canonical_smiles": "CCO",
+            "scores": [
+              {
+                "label": "sweet",
+                "score": 0.5451013445854187
+              },
+              {
+                "label": "bitter",
+                "score": 0.3691164553165436
+              },
+              {
+                "label": "sour",
+                "score": 0.5051629543304443
+              },
+              {
+                "label": "salty",
+                "score": 0.4647761881351471
+              },
+              {
+                "label": "umami",
+                "score": 0.5280255079269409
+              },
+              {
+                "label": "fruity",
+                "score": 0.515968382358551
+              },
+              {
+                "label": "floral",
+                "score": 0.398559033870697
+              },
+              {
+                "label": "spicy",
+                "score": 0.5282334089279175
+              },
+              {
+                "label": "herbal",
+                "score": 0.34333619475364685
+              },
+              {
+                "label": "fatty",
+                "score": 0.38829267024993896
+              },
+              {
+                "label": "smoky",
+                "score": 0.5057616829872131
+              },
+              {
+                "label": "nutty",
+                "score": 0.4724424183368683
+              },
+              {
+                "label": "caramel",
+                "score": 0.511379063129425
+              },
+              {
+                "label": "vanilla",
+                "score": 0.44785991311073303
+              },
+              {
+                "label": "citrus",
+                "score": 0.47836780548095703
+              },
+              {
+                "label": "mint",
+                "score": 0.5232078433036804
+              },
+              {
+                "label": "woody",
+                "score": 0.37726476788520813
+              },
+              {
+                "label": "earthy",
+                "score": 0.4908113479614258
+              },
+              {
+                "label": "sulfurous",
+                "score": 0.4724898934364319
+              },
+              {
+                "label": "alcoholic",
+                "score": 0.591463029384613
+              },
+              {
+                "label": "astringent",
+                "score": 0.5680157542228699
+              },
+              {
+                "label": "cooling",
+                "score": 0.5483054518699646
+              },
+              {
+                "label": "metallic",
+                "score": 0.5765405893325806
+              },
+              {
+                "label": "kokumi",
+                "score": 0.5282624363899231
+              }
+            ]
+          },
+          {
+            "id": "M002",
+            "name": "Acetic acid",
+            "smiles": "CC(=O)O",
+            "canonical_smiles": "CC(=O)O",
+            "scores": [
+              {
+                "label": "sweet",
+                "score": 0.7284609079360962
+              },
+              {
+                "label": "bitter",
+                "score": 0.3310696482658386
+              },
+              {
+                "label": "sour",
+                "score": 0.6822023987770081
+              },
+              {
+                "label": "salty",
+                "score": 0.6129888296127319
+              },
+              {
+                "label": "umami",
+                "score": 0.47906696796417236
+              },
+              {
+                "label": "fruity",
+                "score": 0.5823851227760315
+              },
+              {
+                "label": "floral",
+                "score": 0.37170249223709106
+              },
+              {
+                "label": "spicy",
+                "score": 0.49913010001182556
+              },
+              {
+                "label": "herbal",
+                "score": 0.2730066478252411
+              },
+              {
+                "label": "fatty",
+                "score": 0.34148484468460083
+              },
+              {
+                "label": "smoky",
+                "score": 0.5736767649650574
+              },
+              {
+                "label": "nutty",
+                "score": 0.4621979594230652
+              },
+              {
+                "label": "caramel",
+                "score": 0.6529848575592041
+              },
+              {
+                "label": "vanilla",
+                "score": 0.544342577457428
+              },
+              {
+                "label": "citrus",
+                "score": 0.6377229690551758
+              },
+              {
+                "label": "mint",
+                "score": 0.42034634947776794
+              },
+              {
+                "label": "woody",
+                "score": 0.40457507967948914
+              },
+              {
+                "label": "earthy",
+                "score": 0.4501757323741913
+              },
+              {
+                "label": "sulfurous",
+                "score": 0.34241893887519836
+              },
+              {
+                "label": "alcoholic",
+                "score": 0.6305120587348938
+              },
+              {
+                "label": "astringent",
+                "score": 0.6960080862045288
+              },
+              {
+                "label": "cooling",
+                "score": 0.4756874740123749
+              },
+              {
+                "label": "metallic",
+                "score": 0.4350775182247162
+              },
+              {
+                "label": "kokumi",
+                "score": 0.6901571750640869
+              }
+            ]
+          }
+        ],
+        "mixture": {
+          "scores": [
+            {
+              "label": "sweet",
+              "score": 0.6511592268943787
+            },
+            {
+              "label": "bitter",
+              "score": 0.051761776208877563
+            },
+            {
+              "label": "sour",
+              "score": 0.6564617156982422
+            },
+            {
+              "label": "salty",
+              "score": 0.14203046262264252
+            },
+            {
+              "label": "umami",
+              "score": 0.035312917083501816
+            },
+            {
+              "label": "fruity",
+              "score": 0.4235135316848755
+            },
+            {
+              "label": "floral",
+              "score": 0.040280889719724655
+            },
+            {
+              "label": "spicy",
+              "score": 0.023022737354040146
+            },
+            {
+              "label": "herbal",
+              "score": 0.02544528618454933
+            },
+            {
+              "label": "fatty",
+              "score": 0.0628109872341156
+            },
+            {
+              "label": "smoky",
+              "score": 0.1325276792049408
+            },
+            {
+              "label": "nutty",
+              "score": 0.015256649814546108
+            },
+            {
+              "label": "caramel",
+              "score": 0.5384503602981567
+            },
+            {
+              "label": "vanilla",
+              "score": 0.3415844738483429
+            },
+            {
+              "label": "citrus",
+              "score": 0.4905244708061218
+            },
+            {
+              "label": "mint",
+              "score": 0.14050622284412384
+            },
+            {
+              "label": "woody",
+              "score": 0.03381556645035744
+            },
+            {
+              "label": "earthy",
+              "score": 0.13469530642032623
+            },
+            {
+              "label": "sulfurous",
+              "score": 0.05004395171999931
+            },
+            {
+              "label": "alcoholic",
+              "score": 0.8577985763549805
+            },
+            {
+              "label": "astringent",
+              "score": 0.9181063175201416
+            },
+            {
+              "label": "cooling",
+              "score": 0.01212296262383461
+            },
+            {
+              "label": "metallic",
+              "score": 0.29023492336273193
+            },
+            {
+              "label": "kokumi",
+              "score": 0.0480441190302372
+            }
+          ],
+          "baseline_scores": [
+            {
+              "label": "sweet",
+              "score": 0.800870954990387
+            },
+            {
+              "label": "bitter",
+              "score": 0.49356719851493835
+            },
+            {
+              "label": "sour",
+              "score": 0.7954148650169373
+            },
+            {
+              "label": "salty",
+              "score": 0.6712374091148376
+            },
+            {
+              "label": "umami",
+              "score": 0.695811927318573
+            },
+            {
+              "label": "fruity",
+              "score": 0.7197837233543396
+            },
+            {
+              "label": "floral",
+              "score": 0.5378087162971497
+            },
+            {
+              "label": "spicy",
+              "score": 0.6781971454620361
+            },
+            {
+              "label": "herbal",
+              "score": 0.42924797534942627
+            },
+            {
+              "label": "fatty",
+              "score": 0.5092845559120178
+            },
+            {
+              "label": "smoky",
+              "score": 0.6671732068061829
+            },
+            {
+              "label": "nutty",
+              "score": 0.6721527576446533
+            },
+            {
+              "label": "caramel",
+              "score": 0.748305082321167
+            },
+            {
+              "label": "vanilla",
+              "score": 0.5668264627456665
+            },
+            {
+              "label": "citrus",
+              "score": 0.7258671522140503
+            },
+            {
+              "label": "mint",
+              "score": 0.6628895998001099
+            },
+            {
+              "label": "woody",
+              "score": 0.5152961611747742
+            },
+            {
+              "label": "earthy",
+              "score": 0.6542858481407166
+            },
+            {
+              "label": "sulfurous",
+              "score": 0.5996511578559875
+            },
+            {
+              "label": "alcoholic",
+              "score": 0.7853723168373108
+            },
+            {
+              "label": "astringent",
+              "score": 0.8172725439071655
+            },
+            {
+              "label": "cooling",
+              "score": 0.6840860247612
+            },
+            {
+              "label": "metallic",
+              "score": 0.6477103233337402
+            },
+            {
+              "label": "kokumi",
+              "score": 0.7409480214118958
+            }
+          ],
+          "deltas": [
+            {
+              "label": "sweet",
+              "score": -0.1497117280960083
+            },
+            {
+              "label": "bitter",
+              "score": -0.4418054223060608
+            },
+            {
+              "label": "sour",
+              "score": -0.13895314931869507
+            },
+            {
+              "label": "salty",
+              "score": -0.5292069315910339
+            },
+            {
+              "label": "umami",
+              "score": -0.6604990363121033
+            },
+            {
+              "label": "fruity",
+              "score": -0.2962701916694641
+            },
+            {
+              "label": "floral",
+              "score": -0.4975278377532959
+            },
+            {
+              "label": "spicy",
+              "score": -0.6551744341850281
+            },
+            {
+              "label": "herbal",
+              "score": -0.40380269289016724
+            },
+            {
+              "label": "fatty",
+              "score": -0.4464735686779022
+            },
+            {
+              "label": "smoky",
+              "score": -0.5346455574035645
+            },
+            {
+              "label": "nutty",
+              "score": -0.6568961143493652
+            },
+            {
+              "label": "caramel",
+              "score": -0.20985472202301025
+            },
+            {
+              "label": "vanilla",
+              "score": -0.2252419888973236
+            },
+            {
+              "label": "citrus",
+              "score": -0.23534268140792847
+            },
+            {
+              "label": "mint",
+              "score": -0.5223833918571472
+            },
+            {
+              "label": "woody",
+              "score": -0.48148059844970703
+            },
+            {
+              "label": "earthy",
+              "score": -0.5195905566215515
+            },
+            {
+              "label": "sulfurous",
+              "score": -0.5496072173118591
+            },
+            {
+              "label": "alcoholic",
+              "score": 0.07242625951766968
+            },
+            {
+              "label": "astringent",
+              "score": 0.10083377361297607
+            },
+            {
+              "label": "cooling",
+              "score": -0.6719630360603333
+            },
+            {
+              "label": "metallic",
+              "score": -0.3574753999710083
+            },
+            {
+              "label": "kokumi",
+              "score": -0.6929038763046265
+            }
+          ],
+          "attention_matrix": [
+            [
+              0.5029328465461731,
+              0.4970671236515045
+            ],
+            [
+              0.6028193831443787,
+              0.39718061685562134
+            ]
+          ],
+          "attention_semantics": "last-layer head-averaged attention, not causal or signed interactions",
+          "baseline_semantics": "sigmoid(logsumexp(component logits from the mixture checkpoint))",
+          "raw_interaction_logits": [
+            -0.7106816172599792,
+            -2.668473482131958,
+            -0.657636284828186,
+            -2.3259987831115723,
+            -3.828334331512451,
+            -1.1589243412017822,
+            -3.075904130935669,
+            -4.1602396965026855,
+            -3.1113104820251465,
+            -2.5367045402526855,
+            -2.3833134174346924,
+            -4.523005485534668,
+            -0.8661108613014221,
+            -0.8565459251403809,
+            -0.9366352558135986,
+            -2.302830457687378,
+            -3.1604793071746826,
+            -2.3127448558807373,
+            -3.099271059036255,
+            0.4628007411956787,
+            0.850767195224762,
+            -4.789431571960449,
+            -1.3917523622512817,
+            -3.73789119720459
+          ],
+          "context_scores": [
+            [
+              {
+                "label": "sweet",
+                "score": 0.838711678981781
+              },
+              {
+                "label": "bitter",
+                "score": 0.4396176338195801
+              },
+              {
+                "label": "sour",
+                "score": 0.9142179489135742
+              },
+              {
+                "label": "salty",
+                "score": 0.8269474506378174
+              },
+              {
+                "label": "umami",
+                "score": 0.014964964240789413
+              },
+              {
+                "label": "fruity",
+                "score": 0.2242080122232437
+              },
+              {
+                "label": "floral",
+                "score": 0.7133628726005554
+              },
+              {
+                "label": "spicy",
+                "score": 0.55315101146698
+              },
+              {
+                "label": "herbal",
+                "score": 0.03418933227658272
+              },
+              {
+                "label": "fatty",
+                "score": 0.9494913816452026
+              },
+              {
+                "label": "smoky",
+                "score": 0.10382798314094543
+              },
+              {
+                "label": "nutty",
+                "score": 0.7632349133491516
+              },
+              {
+                "label": "caramel",
+                "score": 0.004423639737069607
+              },
+              {
+                "label": "vanilla",
+                "score": 0.8810398578643799
+              },
+              {
+                "label": "citrus",
+                "score": 0.9044869542121887
+              },
+              {
+                "label": "mint",
+                "score": 0.0717732235789299
+              },
+              {
+                "label": "woody",
+                "score": 0.009729280136525631
+              },
+              {
+                "label": "earthy",
+                "score": 0.9746242165565491
+              },
+              {
+                "label": "sulfurous",
+                "score": 0.4993620216846466
+              },
+              {
+                "label": "alcoholic",
+                "score": 0.7335876226425171
+              },
+              {
+                "label": "astringent",
+                "score": 0.7954061627388
+              },
+              {
+                "label": "cooling",
+                "score": 0.19544266164302826
+              },
+              {
+                "label": "metallic",
+                "score": 0.4714912474155426
+              },
+              {
+                "label": "kokumi",
+                "score": 0.03380696848034859
+              }
+            ],
+            [
+              {
+                "label": "sweet",
+                "score": 0.9401992559432983
+              },
+              {
+                "label": "bitter",
+                "score": 0.01917228102684021
+              },
+              {
+                "label": "sour",
+                "score": 0.3692256212234497
+              },
+              {
+                "label": "salty",
+                "score": 0.9209204316139221
+              },
+              {
+                "label": "umami",
+                "score": 0.24077031016349792
+              },
+              {
+                "label": "fruity",
+                "score": 0.176481693983078
+              },
+              {
+                "label": "floral",
+                "score": 0.869478166103363
+              },
+              {
+                "label": "spicy",
+                "score": 0.5446204543113708
+              },
+              {
+                "label": "herbal",
+                "score": 0.02692553773522377
+              },
+              {
+                "label": "fatty",
+                "score": 0.15612664818763733
+              },
+              {
+                "label": "smoky",
+                "score": 0.23671303689479828
+              },
+              {
+                "label": "nutty",
+                "score": 0.730995774269104
+              },
+              {
+                "label": "caramel",
+                "score": 0.0170030165463686
+              },
+              {
+                "label": "vanilla",
+                "score": 0.25912415981292725
+              },
+              {
+                "label": "citrus",
+                "score": 0.99116450548172
+              },
+              {
+                "label": "mint",
+                "score": 0.004457799252122641
+              },
+              {
+                "label": "woody",
+                "score": 0.003642750671133399
+              },
+              {
+                "label": "earthy",
+                "score": 0.5862837433815002
+              },
+              {
+                "label": "sulfurous",
+                "score": 0.09055943787097931
+              },
+              {
+                "label": "alcoholic",
+                "score": 0.4704533815383911
+              },
+              {
+                "label": "astringent",
+                "score": 0.7438743114471436
+              },
+              {
+                "label": "cooling",
+                "score": 0.24432560801506042
+              },
+              {
+                "label": "metallic",
+                "score": 0.2851865291595459
+              },
+              {
+                "label": "kokumi",
+                "score": 0.04806718975305557
+              }
+            ]
+          ]
+        },
+        "model_version": "mf-web-1.0.0-3908eb30-3a29d214",
+        "dataset_kind": "synthetic_benchmark",
+        "notice": {
+          "zh": "合成数据演示模型。分数并非实测风味强度；增强/减弱为相对模型内部基线的预测变化。注意力不代表因果作用或受体竞争。",
+          "en": "Synthetic-benchmark demo. Scores are not measured flavor intensities. Changes are relative to the model's internal baseline. Attention is not evidence of causality or receptor competition."
+        },
+        "result_kind": "precomputed_example",
+        "example_id": "mixture",
+        "provenance": {
+          "zh": "由随项目保存的模型权重预先计算；分数已与复制的原始预测器示例核对。页面切换不会运行模型。",
+          "en": "Precomputed with the model checkpoints included in the project and checked against the copied original predictors. Switching examples does not run inference."
+        },
+        "storage_notice": {
+          "zh": "本页展示预计算示例，不接收或保存用户分子提交。语言偏好仅保存在当前浏览器。",
+          "en": "This site displays precomputed examples and does not accept or store molecular submissions. Language preference is saved only in this browser."
+        }
+      }
+    },
+    {
+      "id": "batch",
+      "name": {
+        "zh": "比较多个分子",
+        "en": "Compare molecules"
+      },
+      "description": {
+        "zh": "乙醇、乙酸、苯酚 · 分别预测",
+        "en": "Ethanol, acetic acid, phenol · individual predictions"
+      },
+      "mode": "batch",
+      "structures": [
+        {
+          "id": "M001",
+          "name": "Ethanol",
+          "smiles": "CCO",
+          "canonical_smiles": "CCO",
+          "formula": "C2H6O",
+          "molecular_weight": 46.07,
+          "atom_count": 3,
+          "fragment_count": 1,
+          "svg": "<?xml version='1.0' encoding='iso-8859-1'?>\n<svg version='1.1' baseProfile='full'\n              xmlns='http://www.w3.org/2000/svg'\n                      xmlns:rdkit='http://www.rdkit.org/xml'\n                      xmlns:xlink='http://www.w3.org/1999/xlink'\n                  xml:space='preserve'\nwidth='320px' height='190px' viewBox='0 0 320 190'>\n<!-- END OF HEADER -->\n<path class='bond-0 atom-0 atom-1' d='M 23.0,121.5 L 140.2,53.8' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-1 atom-1 atom-2' d='M 140.2,53.8 L 190.1,82.6' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-1 atom-1 atom-2' d='M 190.1,82.6 L 240.0,111.4' style='fill:none;fill-rule:evenodd;stroke:#FF0000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path d='M 134.4,57.2 L 140.2,53.8 L 142.7,55.2' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />\n<path class='atom-2' d='M 244.4 121.5\nQ 244.4 114.7, 247.8 110.9\nQ 251.2 107.1, 257.4 107.1\nQ 263.7 107.1, 267.1 110.9\nQ 270.4 114.7, 270.4 121.5\nQ 270.4 128.4, 267.0 132.3\nQ 263.6 136.2, 257.4 136.2\nQ 251.2 136.2, 247.8 132.3\nQ 244.4 128.5, 244.4 121.5\nM 257.4 133.0\nQ 261.8 133.0, 264.1 130.1\nQ 266.4 127.2, 266.4 121.5\nQ 266.4 116.0, 264.1 113.2\nQ 261.8 110.3, 257.4 110.3\nQ 253.1 110.3, 250.8 113.1\nQ 248.4 115.9, 248.4 121.5\nQ 248.4 127.3, 250.8 130.1\nQ 253.1 133.0, 257.4 133.0\n' fill='#FF0000'/>\n<path class='atom-2' d='M 274.8 107.5\nL 278.7 107.5\nL 278.7 119.5\nL 293.2 119.5\nL 293.2 107.5\nL 297.0 107.5\nL 297.0 135.8\nL 293.2 135.8\nL 293.2 122.7\nL 278.7 122.7\nL 278.7 135.8\nL 274.8 135.8\nL 274.8 107.5\n' fill='#FF0000'/>\n</svg>\n"
+        },
+        {
+          "id": "M002",
+          "name": "Acetic acid",
+          "smiles": "CC(=O)O",
+          "canonical_smiles": "CC(=O)O",
+          "formula": "C2H4O2",
+          "molecular_weight": 60.05,
+          "atom_count": 4,
+          "fragment_count": 1,
+          "svg": "<?xml version='1.0' encoding='iso-8859-1'?>\n<svg version='1.1' baseProfile='full'\n              xmlns='http://www.w3.org/2000/svg'\n                      xmlns:rdkit='http://www.rdkit.org/xml'\n                      xmlns:xlink='http://www.w3.org/1999/xlink'\n                  xml:space='preserve'\nwidth='320px' height='190px' viewBox='0 0 320 190'>\n<!-- END OF HEADER -->\n<path class='bond-0 atom-0 atom-1' d='M 58.4,166.4 L 141.1,118.7' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-1 atom-1 atom-2' d='M 148.3,122.8 L 148.3,81.6' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-1 atom-1 atom-2' d='M 148.3,81.6 L 148.3,40.4' style='fill:none;fill-rule:evenodd;stroke:#FF0000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-1 atom-1 atom-2' d='M 133.9,122.8 L 133.9,81.6' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-1 atom-1 atom-2' d='M 133.9,81.6 L 133.9,40.4' style='fill:none;fill-rule:evenodd;stroke:#FF0000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-2 atom-1 atom-3' d='M 141.1,118.7 L 174.7,138.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-2 atom-1 atom-3' d='M 174.7,138.0 L 208.2,157.4' style='fill:none;fill-rule:evenodd;stroke:#FF0000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path d='M 137.0,121.0 L 141.1,118.7 L 142.8,119.6' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />\n<path class='atom-2' d='M 128.7 23.3\nQ 128.7 16.8, 131.9 13.1\nQ 135.1 9.5, 141.1 9.5\nQ 147.1 9.5, 150.3 13.1\nQ 153.5 16.8, 153.5 23.3\nQ 153.5 29.8, 150.3 33.6\nQ 147.0 37.3, 141.1 37.3\nQ 135.2 37.3, 131.9 33.6\nQ 128.7 29.9, 128.7 23.3\nM 141.1 34.2\nQ 145.2 34.2, 147.4 31.5\nQ 149.7 28.7, 149.7 23.3\nQ 149.7 17.9, 147.4 15.3\nQ 145.2 12.6, 141.1 12.6\nQ 137.0 12.6, 134.7 15.2\nQ 132.5 17.9, 132.5 23.3\nQ 132.5 28.7, 134.7 31.5\nQ 137.0 34.2, 141.1 34.2\n' fill='#FF0000'/>\n<path class='atom-3' d='M 211.4 166.5\nQ 211.4 160.0, 214.6 156.4\nQ 217.8 152.7, 223.8 152.7\nQ 229.8 152.7, 233.0 156.4\nQ 236.2 160.0, 236.2 166.5\nQ 236.2 173.1, 233.0 176.8\nQ 229.7 180.5, 223.8 180.5\nQ 217.8 180.5, 214.6 176.8\nQ 211.4 173.1, 211.4 166.5\nM 223.8 177.4\nQ 227.9 177.4, 230.1 174.7\nQ 232.4 171.9, 232.4 166.5\nQ 232.4 161.2, 230.1 158.5\nQ 227.9 155.8, 223.8 155.8\nQ 219.7 155.8, 217.4 158.5\nQ 215.2 161.1, 215.2 166.5\nQ 215.2 171.9, 217.4 174.7\nQ 219.7 177.4, 223.8 177.4\n' fill='#FF0000'/>\n<path class='atom-3' d='M 240.4 153.0\nL 244.1 153.0\nL 244.1 164.5\nL 257.9 164.5\nL 257.9 153.0\nL 261.6 153.0\nL 261.6 180.1\nL 257.9 180.1\nL 257.9 167.6\nL 244.1 167.6\nL 244.1 180.1\nL 240.4 180.1\nL 240.4 153.0\n' fill='#FF0000'/>\n</svg>\n"
+        },
+        {
+          "id": "M003",
+          "name": "Phenol",
+          "smiles": "c1ccccc1O",
+          "canonical_smiles": "Oc1ccccc1",
+          "formula": "C6H6O",
+          "molecular_weight": 94.11,
+          "atom_count": 7,
+          "fragment_count": 1,
+          "svg": "<?xml version='1.0' encoding='iso-8859-1'?>\n<svg version='1.1' baseProfile='full'\n              xmlns='http://www.w3.org/2000/svg'\n                      xmlns:rdkit='http://www.rdkit.org/xml'\n                      xmlns:xlink='http://www.w3.org/1999/xlink'\n                  xml:space='preserve'\nwidth='320px' height='190px' viewBox='0 0 320 190'>\n<!-- END OF HEADER -->\n<path class='bond-0 atom-0 atom-1' d='M 256.6,95.0 L 221.1,95.0' style='fill:none;fill-rule:evenodd;stroke:#FF0000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-0 atom-0 atom-1' d='M 221.1,95.0 L 185.6,95.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-1 atom-1 atom-2' d='M 185.6,95.0 L 143.2,168.5' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-1 atom-1 atom-2' d='M 170.9,95.0 L 135.9,155.7' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-2 atom-2 atom-3' d='M 143.2,168.5 L 58.4,168.5' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-3 atom-3 atom-4' d='M 58.4,168.5 L 16.0,95.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-3 atom-3 atom-4' d='M 65.8,155.7 L 30.7,95.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-4 atom-4 atom-5' d='M 16.0,95.0 L 58.4,21.5' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-5 atom-5 atom-6' d='M 58.4,21.5 L 143.2,21.5' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-5 atom-5 atom-6' d='M 65.8,34.3 L 135.9,34.3' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-6 atom-6 atom-1' d='M 143.2,21.5 L 185.6,95.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path d='M 145.3,164.8 L 143.2,168.5 L 139.0,168.5' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />\n<path d='M 62.6,168.5 L 58.4,168.5 L 56.3,164.8' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />\n<path d='M 18.1,98.7 L 16.0,95.0 L 18.1,91.3' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />\n<path d='M 56.3,25.2 L 58.4,21.5 L 62.6,21.5' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />\n<path d='M 139.0,21.5 L 143.2,21.5 L 145.3,25.2' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />\n<path class='atom-0' d='M 259.4 95.1\nQ 259.4 89.3, 262.3 86.1\nQ 265.1 82.9, 270.4 82.9\nQ 275.8 82.9, 278.6 86.1\nQ 281.5 89.3, 281.5 95.1\nQ 281.5 100.9, 278.6 104.2\nQ 275.7 107.5, 270.4 107.5\nQ 265.1 107.5, 262.3 104.2\nQ 259.4 100.9, 259.4 95.1\nM 270.4 104.8\nQ 274.1 104.8, 276.1 102.4\nQ 278.1 99.9, 278.1 95.1\nQ 278.1 90.4, 276.1 88.0\nQ 274.1 85.6, 270.4 85.6\nQ 266.8 85.6, 264.8 87.9\nQ 262.8 90.3, 262.8 95.1\nQ 262.8 99.9, 264.8 102.4\nQ 266.8 104.8, 270.4 104.8\n' fill='#FF0000'/>\n<path class='atom-0' d='M 285.2 83.1\nL 288.5 83.1\nL 288.5 93.3\nL 300.7 93.3\nL 300.7 83.1\nL 304.0 83.1\nL 304.0 107.1\nL 300.7 107.1\nL 300.7 96.1\nL 288.5 96.1\nL 288.5 107.1\nL 285.2 107.1\nL 285.2 83.1\n' fill='#FF0000'/>\n</svg>\n"
+        }
+      ],
+      "result": {
+        "mode": "batch",
+        "molecules": [
+          {
+            "id": "M001",
+            "name": "Ethanol",
+            "smiles": "CCO",
+            "canonical_smiles": "CCO",
+            "scores": [
+              {
+                "label": "sweet",
+                "score": 0.5451013445854187
+              },
+              {
+                "label": "bitter",
+                "score": 0.3691164553165436
+              },
+              {
+                "label": "sour",
+                "score": 0.5051629543304443
+              },
+              {
+                "label": "salty",
+                "score": 0.4647761881351471
+              },
+              {
+                "label": "umami",
+                "score": 0.5280255079269409
+              },
+              {
+                "label": "fruity",
+                "score": 0.515968382358551
+              },
+              {
+                "label": "floral",
+                "score": 0.39855897426605225
+              },
+              {
+                "label": "spicy",
+                "score": 0.5282334089279175
+              },
+              {
+                "label": "herbal",
+                "score": 0.34333616495132446
+              },
+              {
+                "label": "fatty",
+                "score": 0.38829272985458374
+              },
+              {
+                "label": "smoky",
+                "score": 0.5057616829872131
+              },
+              {
+                "label": "nutty",
+                "score": 0.4724424183368683
+              },
+              {
+                "label": "caramel",
+                "score": 0.511379063129425
+              },
+              {
+                "label": "vanilla",
+                "score": 0.44785991311073303
+              },
+              {
+                "label": "citrus",
+                "score": 0.47836780548095703
+              },
+              {
+                "label": "mint",
+                "score": 0.5232078433036804
+              },
+              {
+                "label": "woody",
+                "score": 0.37726473808288574
+              },
+              {
+                "label": "earthy",
+                "score": 0.490811288356781
+              },
+              {
+                "label": "sulfurous",
+                "score": 0.4724898934364319
+              },
+              {
+                "label": "alcoholic",
+                "score": 0.5914629697799683
+              },
+              {
+                "label": "astringent",
+                "score": 0.5680157542228699
+              },
+              {
+                "label": "cooling",
+                "score": 0.5483054518699646
+              },
+              {
+                "label": "metallic",
+                "score": 0.5765405893325806
+              },
+              {
+                "label": "kokumi",
+                "score": 0.5282624363899231
+              }
+            ]
+          },
+          {
+            "id": "M002",
+            "name": "Acetic acid",
+            "smiles": "CC(=O)O",
+            "canonical_smiles": "CC(=O)O",
+            "scores": [
+              {
+                "label": "sweet",
+                "score": 0.728460967540741
+              },
+              {
+                "label": "bitter",
+                "score": 0.3310696482658386
+              },
+              {
+                "label": "sour",
+                "score": 0.6822023987770081
+              },
+              {
+                "label": "salty",
+                "score": 0.6129888892173767
+              },
+              {
+                "label": "umami",
+                "score": 0.47906696796417236
+              },
+              {
+                "label": "fruity",
+                "score": 0.5823850631713867
+              },
+              {
+                "label": "floral",
+                "score": 0.37170249223709106
+              },
+              {
+                "label": "spicy",
+                "score": 0.499129980802536
+              },
+              {
+                "label": "herbal",
+                "score": 0.2730066478252411
+              },
+              {
+                "label": "fatty",
+                "score": 0.3414848744869232
+              },
+              {
+                "label": "smoky",
+                "score": 0.5736768245697021
+              },
+              {
+                "label": "nutty",
+                "score": 0.4621979594230652
+              },
+              {
+                "label": "caramel",
+                "score": 0.6529848575592041
+              },
+              {
+                "label": "vanilla",
+                "score": 0.544342577457428
+              },
+              {
+                "label": "citrus",
+                "score": 0.6377229690551758
+              },
+              {
+                "label": "mint",
+                "score": 0.42034628987312317
+              },
+              {
+                "label": "woody",
+                "score": 0.40457507967948914
+              },
+              {
+                "label": "earthy",
+                "score": 0.45017579197883606
+              },
+              {
+                "label": "sulfurous",
+                "score": 0.34241893887519836
+              },
+              {
+                "label": "alcoholic",
+                "score": 0.6305120587348938
+              },
+              {
+                "label": "astringent",
+                "score": 0.6960080862045288
+              },
+              {
+                "label": "cooling",
+                "score": 0.4756874740123749
+              },
+              {
+                "label": "metallic",
+                "score": 0.4350774884223938
+              },
+              {
+                "label": "kokumi",
+                "score": 0.6901571750640869
+              }
+            ]
+          },
+          {
+            "id": "M003",
+            "name": "Phenol",
+            "smiles": "c1ccccc1O",
+            "canonical_smiles": "Oc1ccccc1",
+            "scores": [
+              {
+                "label": "sweet",
+                "score": 0.4944685697555542
+              },
+              {
+                "label": "bitter",
+                "score": 0.42383986711502075
+              },
+              {
+                "label": "sour",
+                "score": 0.514676034450531
+              },
+              {
+                "label": "salty",
+                "score": 0.4654478430747986
+              },
+              {
+                "label": "umami",
+                "score": 0.46489864587783813
+              },
+              {
+                "label": "fruity",
+                "score": 0.6571878790855408
+              },
+              {
+                "label": "floral",
+                "score": 0.6767115592956543
+              },
+              {
+                "label": "spicy",
+                "score": 0.40260547399520874
+              },
+              {
+                "label": "herbal",
+                "score": 0.7647581696510315
+              },
+              {
+                "label": "fatty",
+                "score": 0.3465123772621155
+              },
+              {
+                "label": "smoky",
+                "score": 0.7738164663314819
+              },
+              {
+                "label": "nutty",
+                "score": 0.6558695435523987
+              },
+              {
+                "label": "caramel",
+                "score": 0.5270148515701294
+              },
+              {
+                "label": "vanilla",
+                "score": 0.373159795999527
+              },
+              {
+                "label": "citrus",
+                "score": 0.4025362730026245
+              },
+              {
+                "label": "mint",
+                "score": 0.40183576941490173
+              },
+              {
+                "label": "woody",
+                "score": 0.7762148976325989
+              },
+              {
+                "label": "earthy",
+                "score": 0.4243053197860718
+              },
+              {
+                "label": "sulfurous",
+                "score": 0.34517353773117065
+              },
+              {
+                "label": "alcoholic",
+                "score": 0.4939557909965515
+              },
+              {
+                "label": "astringent",
+                "score": 0.513999342918396
+              },
+              {
+                "label": "cooling",
+                "score": 0.4628802239894867
+              },
+              {
+                "label": "metallic",
+                "score": 0.2492828667163849
+              },
+              {
+                "label": "kokumi",
+                "score": 0.6020838618278503
+              }
+            ]
+          }
+        ],
+        "mixture": null,
+        "model_version": "mf-web-1.0.0-3908eb30-3a29d214",
+        "dataset_kind": "synthetic_benchmark",
+        "notice": {
+          "zh": "合成数据演示模型。分数并非实测风味强度；增强/减弱为相对模型内部基线的预测变化。注意力不代表因果作用或受体竞争。",
+          "en": "Synthetic-benchmark demo. Scores are not measured flavor intensities. Changes are relative to the model's internal baseline. Attention is not evidence of causality or receptor competition."
+        },
+        "result_kind": "precomputed_example",
+        "example_id": "batch",
+        "provenance": {
+          "zh": "由随项目保存的模型权重预先计算；分数已与复制的原始预测器示例核对。页面切换不会运行模型。",
+          "en": "Precomputed with the model checkpoints included in the project and checked against the copied original predictors. Switching examples does not run inference."
+        },
+        "storage_notice": {
+          "zh": "本页展示预计算示例，不接收或保存用户分子提交。语言偏好仅保存在当前浏览器。",
+          "en": "This site displays precomputed examples and does not accept or store molecular submissions. Language preference is saved only in this browser."
+        }
+      }
+    }
+  ]
+}

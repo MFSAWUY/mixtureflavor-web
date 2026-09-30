@@ -1,6 +1,7 @@
 * text=auto eol=lf
-# The model manifest hashes these copied assets byte for byte.
+# Preserve byte-for-byte hashes of model assets and precomputed reference examples.
 vendor/** -text
+examples/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 *.pt -text
 *.png -text
 *.jpg -text

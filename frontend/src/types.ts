@@ -12,3 +12,9 @@ export type Prediction = {
 export type Meta = { model_version: string; dataset_kind: string; notice: Localized; storage_notice: Localized; labels: { id: string; en: string; zh: string }[]; metrics: { single: Record<string, number>; mixture: Record<string, number> }; device: string; parameter_count: number }
 export type Example = { id: string; name: Localized; description: Localized; mode: Mode; molecules: { name: string; smiles: string }[] }
 export type RecordItem = { id: string; created_at: string; mode: string; status: string; model_version: string; input: unknown; error: unknown; result?: Prediction }
+export type PrecomputedPrediction = Omit<Prediction, 'record_id' | 'created_at' | 'inference_ms'> & {
+  result_kind: 'precomputed_example'; example_id: string; provenance: Localized
+}
+export type DisplayPrediction = Prediction | PrecomputedPrediction
+export type ShowcaseExample = Omit<Example, 'molecules'> & { structures: Molecule[]; result: PrecomputedPrediction }
+export type ShowcaseData = { schema_version: number; meta: Meta; provenance: Localized; source_examples_sha256: string; examples: ShowcaseExample[] }
