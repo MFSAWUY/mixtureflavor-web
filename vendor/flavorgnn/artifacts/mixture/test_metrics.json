@@ -1,0 +1,22 @@
+{
+  "macro_auroc": 0.9736348898555502,
+  "macro_average_precision": 0.9326880283141815,
+  "macro_f1": 0.8798360915961662,
+  "best_macro_f1": 0.8798360915961662,
+  "best_f1_threshold": 0.5,
+  "exact_match_ratio": 0.2798053527980535,
+  "hamming_loss": 0.05910381184103812,
+  "expected_calibration_error": 0.06798446219073062,
+  "synergy_detection_rate": 0.9289473684210526,
+  "antagonism_detection_rate": 0.9302325581395349,
+  "interaction_delta_score": 2.412109375,
+  "interacting_delta_score": 1.28125,
+  "non_interacting_delta_score": 2.48046875,
+  "mean_lift_score": 1.2399767637252808,
+  "counterfactual_accuracy": 0.7789473533630371,
+  "eval_loss": 0.606682939188821,
+  "eval_mixture_loss": 0.26437328117234365,
+  "eval_baseline_loss": 0.5969477210726056,
+  "eval_sparse_loss": 2.410435267857143,
+  "eval_delta_supervision_loss": 0.0789250268467835
+}

@@ -1,0 +1,7 @@
+* text=auto eol=lf
+# The model manifest hashes these copied assets byte for byte.
+vendor/** -text
+*.pt -text
+*.png -text
+*.jpg -text
+*.jpeg -text

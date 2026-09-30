@@ -1,0 +1,45 @@
+experiment_name: flavorgnn_demo
+output_dir: artifacts
+device: auto
+seed: 42
+
+data:
+  dataset_csv: data/demo_flavor_dataset.csv
+  split_dir: data/splits
+  train_ratio: 0.8
+  val_ratio: 0.1
+  test_ratio: 0.1
+  random_seed: 42
+  min_label_count: 2
+  use_rdkit_if_available: true
+  max_smiles_length: 2000
+  num_workers: 0
+
+model:
+  d_model: 256
+  num_layers: 6
+  dropout: 0.3
+  hidden_1: 512
+  hidden_2: 256
+  attention_heads: 1
+  max_atomic_number: 43
+  edge_feature_dim: 14
+  global_feature_dim: 16
+
+training:
+  batch_size: 64
+  max_epochs: 30
+  learning_rate: 0.0001
+  weight_decay: 0.00001
+  warmup_steps: 100
+  label_smoothing: 0.05
+  aux_weight: 0.0
+  early_stopping_patience: 10
+  grad_clip_norm: 5.0
+
+inference:
+  checkpoint_path: artifacts/best_model.pt
+  top_k: 5
+  threshold: 0.5
+  return_attention: false
+

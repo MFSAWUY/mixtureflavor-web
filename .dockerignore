@@ -1,0 +1,16 @@
+.git
+.env
+.env.*
+.cache
+.python-deps
+.venv
+runtime
+private-backups
+release
+tests
+docs
+frontend/node_modules
+frontend/dist
+frontend/*.tsbuildinfo
+**/__pycache__
+**/*.pyc

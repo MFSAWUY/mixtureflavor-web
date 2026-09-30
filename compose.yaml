@@ -1,0 +1,59 @@
+name: mixtureflavor
+services:
+  api:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.api
+    environment:
+      FLAVOR_ADMIN_USER: ${FLAVOR_ADMIN_USER:-admin}
+      FLAVOR_ADMIN_PASSWORD: ${FLAVOR_ADMIN_PASSWORD:?Run scripts/init_env.py to create .env first}
+      FLAVOR_DATABASE: ${FLAVOR_DATABASE:-/data/submissions.sqlite3}
+      FLAVOR_BACKUP_DIR: /data/backups
+      FLAVOR_BACKUP_HOURS: "24"
+      FLAVOR_BACKUP_KEEP: "7"
+      FLAVOR_THREADS: "2"
+    volumes:
+      - flavor-data:/data
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp:size=128m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 2g
+    pids_limit: 256
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+  web:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.web
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:-:80}
+    ports:
+      - "${BIND_ADDRESS:-127.0.0.1}:${HTTP_PORT:-8080}:80"
+      - "${BIND_ADDRESS:-127.0.0.1}:${HTTPS_PORT:-8443}:443"
+    volumes:
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 256m
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+volumes:
+  flavor-data:
+  caddy-data:
+  caddy-config:

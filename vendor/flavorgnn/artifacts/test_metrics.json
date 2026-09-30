@@ -1,0 +1,10 @@
+{
+  "macro_auroc": 0.7569372866991915,
+  "macro_average_precision": 0.5664788749610177,
+  "macro_f1": 0.36789021164021163,
+  "best_macro_f1": 0.36789021164021163,
+  "best_f1_threshold": 0.5,
+  "exact_match_ratio": 0.0,
+  "hamming_loss": 0.36666666666666664,
+  "eval_loss": 0.7556270360946655
+}

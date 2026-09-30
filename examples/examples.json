@@ -1,0 +1,669 @@
+{
+  "examples": [
+    {
+      "id": "single",
+      "name": {
+        "zh": "从一个分子开始",
+        "en": "Start with one molecule"
+      },
+      "description": {
+        "zh": "乙醇 · 单分子风味预测",
+        "en": "Ethanol · single-molecule prediction"
+      },
+      "mode": "single",
+      "molecules": [
+        {
+          "name": "Ethanol",
+          "smiles": "CCO"
+        }
+      ],
+      "reference_result": [
+        {
+          "smiles": "CCO",
+          "flavors": [
+            {
+              "label": "alcoholic",
+              "probability": 0.591463029384613
+            },
+            {
+              "label": "metallic",
+              "probability": 0.5765405893325806
+            },
+            {
+              "label": "astringent",
+              "probability": 0.5680157542228699
+            },
+            {
+              "label": "cooling",
+              "probability": 0.5483054518699646
+            },
+            {
+              "label": "sweet",
+              "probability": 0.5451013445854187
+            },
+            {
+              "label": "kokumi",
+              "probability": 0.5282623767852783
+            },
+            {
+              "label": "spicy",
+              "probability": 0.5282334089279175
+            },
+            {
+              "label": "umami",
+              "probability": 0.5280254483222961
+            },
+            {
+              "label": "mint",
+              "probability": 0.52320796251297
+            },
+            {
+              "label": "fruity",
+              "probability": 0.515968382358551
+            },
+            {
+              "label": "caramel",
+              "probability": 0.511379063129425
+            },
+            {
+              "label": "smoky",
+              "probability": 0.5057616233825684
+            },
+            {
+              "label": "sour",
+              "probability": 0.5051630139350891
+            },
+            {
+              "label": "earthy",
+              "probability": 0.4908113479614258
+            },
+            {
+              "label": "citrus",
+              "probability": 0.47836774587631226
+            },
+            {
+              "label": "sulfurous",
+              "probability": 0.4724898934364319
+            },
+            {
+              "label": "nutty",
+              "probability": 0.4724424183368683
+            },
+            {
+              "label": "salty",
+              "probability": 0.4647761881351471
+            },
+            {
+              "label": "vanilla",
+              "probability": 0.44785991311073303
+            },
+            {
+              "label": "floral",
+              "probability": 0.39855897426605225
+            },
+            {
+              "label": "fatty",
+              "probability": 0.3882928192615509
+            },
+            {
+              "label": "woody",
+              "probability": 0.3772647976875305
+            },
+            {
+              "label": "bitter",
+              "probability": 0.3691164255142212
+            },
+            {
+              "label": "herbal",
+              "probability": 0.34333619475364685
+            }
+          ]
+        }
+      ],
+      "dataset_kind": "synthetic_benchmark"
+    },
+    {
+      "id": "mixture",
+      "name": {
+        "zh": "探索混合后的变化",
+        "en": "Explore a mixture"
+      },
+      "description": {
+        "zh": "乙醇 + 乙酸 · 两组分混合物",
+        "en": "Ethanol + acetic acid · two components"
+      },
+      "mode": "mixture",
+      "molecules": [
+        {
+          "name": "Ethanol",
+          "smiles": "CCO"
+        },
+        {
+          "name": "Acetic acid",
+          "smiles": "CC(=O)O"
+        }
+      ],
+      "reference_result": {
+        "mixture_prediction": {
+          "flavors": [
+            {
+              "label": "astringent",
+              "probability": 0.9181063175201416,
+              "interaction_delta": 0.850767195224762
+            },
+            {
+              "label": "alcoholic",
+              "probability": 0.8577985763549805,
+              "interaction_delta": 0.4628007411956787
+            },
+            {
+              "label": "sour",
+              "probability": 0.6564617156982422,
+              "interaction_delta": -0.657636284828186
+            },
+            {
+              "label": "sweet",
+              "probability": 0.6511592268943787,
+              "interaction_delta": -0.7106816172599792
+            },
+            {
+              "label": "caramel",
+              "probability": 0.5384503602981567,
+              "interaction_delta": -0.8661108613014221
+            },
+            {
+              "label": "citrus",
+              "probability": 0.4905244708061218,
+              "interaction_delta": -0.9366352558135986
+            },
+            {
+              "label": "fruity",
+              "probability": 0.4235135316848755,
+              "interaction_delta": -1.1589243412017822
+            },
+            {
+              "label": "vanilla",
+              "probability": 0.3415844738483429,
+              "interaction_delta": -0.8565459251403809
+            },
+            {
+              "label": "metallic",
+              "probability": 0.29023492336273193,
+              "interaction_delta": -1.3917523622512817
+            },
+            {
+              "label": "salty",
+              "probability": 0.14203046262264252,
+              "interaction_delta": -2.3259987831115723
+            },
+            {
+              "label": "mint",
+              "probability": 0.14050622284412384,
+              "interaction_delta": -2.302830457687378
+            },
+            {
+              "label": "earthy",
+              "probability": 0.13469530642032623,
+              "interaction_delta": -2.3127448558807373
+            },
+            {
+              "label": "smoky",
+              "probability": 0.1325276792049408,
+              "interaction_delta": -2.3833134174346924
+            },
+            {
+              "label": "fatty",
+              "probability": 0.0628109872341156,
+              "interaction_delta": -2.5367045402526855
+            },
+            {
+              "label": "bitter",
+              "probability": 0.051761776208877563,
+              "interaction_delta": -2.668473482131958
+            },
+            {
+              "label": "sulfurous",
+              "probability": 0.05004395171999931,
+              "interaction_delta": -3.099271059036255
+            },
+            {
+              "label": "kokumi",
+              "probability": 0.0480441190302372,
+              "interaction_delta": -3.73789119720459
+            },
+            {
+              "label": "floral",
+              "probability": 0.040280889719724655,
+              "interaction_delta": -3.075904130935669
+            },
+            {
+              "label": "umami",
+              "probability": 0.035312917083501816,
+              "interaction_delta": -3.828334331512451
+            },
+            {
+              "label": "woody",
+              "probability": 0.03381556645035744,
+              "interaction_delta": -3.1604793071746826
+            },
+            {
+              "label": "herbal",
+              "probability": 0.02544528618454933,
+              "interaction_delta": -3.1113104820251465
+            },
+            {
+              "label": "spicy",
+              "probability": 0.023022737354040146,
+              "interaction_delta": -4.1602396965026855
+            },
+            {
+              "label": "nutty",
+              "probability": 0.015256649814546108,
+              "interaction_delta": -4.523005485534668
+            },
+            {
+              "label": "cooling",
+              "probability": 0.01212296262383461,
+              "interaction_delta": -4.789431571960449
+            }
+          ]
+        },
+        "model_version": "2.0.0",
+        "inference_ms": 4.273099999409169,
+        "per_molecule_attribution": [
+          {
+            "smiles": "CCO",
+            "context_flavor_scores": {
+              "earthy": 0.9746242165565491,
+              "fatty": 0.9494913816452026,
+              "sour": 0.9142179489135742,
+              "citrus": 0.9044869542121887,
+              "vanilla": 0.8810398578643799,
+              "sweet": 0.838711678981781,
+              "salty": 0.8269474506378174,
+              "astringent": 0.7954061627388,
+              "nutty": 0.7632349133491516,
+              "alcoholic": 0.7335876226425171,
+              "floral": 0.7133628726005554,
+              "spicy": 0.55315101146698,
+              "sulfurous": 0.4993620216846466,
+              "metallic": 0.4714912474155426,
+              "bitter": 0.4396176338195801,
+              "fruity": 0.2242080122232437,
+              "cooling": 0.19544266164302826,
+              "smoky": 0.10382798314094543,
+              "mint": 0.0717732235789299,
+              "herbal": 0.03418933227658272,
+              "kokumi": 0.03380696848034859,
+              "umami": 0.014964964240789413,
+              "woody": 0.009729280136525631,
+              "caramel": 0.004423639737069607
+            }
+          },
+          {
+            "smiles": "CC(=O)O",
+            "context_flavor_scores": {
+              "citrus": 0.99116450548172,
+              "sweet": 0.9401992559432983,
+              "salty": 0.9209204316139221,
+              "floral": 0.869478166103363,
+              "astringent": 0.7438743114471436,
+              "nutty": 0.730995774269104,
+              "earthy": 0.5862837433815002,
+              "spicy": 0.5446204543113708,
+              "alcoholic": 0.4704533815383911,
+              "sour": 0.3692256212234497,
+              "metallic": 0.2851865291595459,
+              "vanilla": 0.25912415981292725,
+              "cooling": 0.24432560801506042,
+              "umami": 0.24077031016349792,
+              "smoky": 0.23671303689479828,
+              "fruity": 0.176481693983078,
+              "fatty": 0.15612664818763733,
+              "sulfurous": 0.09055943787097931,
+              "kokumi": 0.04806718975305557,
+              "herbal": 0.02692553773522377,
+              "bitter": 0.01917228102684021,
+              "caramel": 0.0170030165463686,
+              "mint": 0.004457799252122641,
+              "woody": 0.003642750671133399
+            }
+          }
+        ]
+      },
+      "dataset_kind": "synthetic_benchmark"
+    },
+    {
+      "id": "batch",
+      "name": {
+        "zh": "比较多个分子",
+        "en": "Compare molecules"
+      },
+      "description": {
+        "zh": "乙醇、乙酸、苯酚 · 分别预测",
+        "en": "Ethanol, acetic acid, phenol · individual predictions"
+      },
+      "mode": "batch",
+      "molecules": [
+        {
+          "name": "Ethanol",
+          "smiles": "CCO"
+        },
+        {
+          "name": "Acetic acid",
+          "smiles": "CC(=O)O"
+        },
+        {
+          "name": "Phenol",
+          "smiles": "c1ccccc1O"
+        }
+      ],
+      "reference_result": [
+        {
+          "smiles": "CCO",
+          "flavors": [
+            {
+              "label": "alcoholic",
+              "probability": 0.5914629697799683
+            },
+            {
+              "label": "metallic",
+              "probability": 0.5765405893325806
+            },
+            {
+              "label": "astringent",
+              "probability": 0.5680157542228699
+            },
+            {
+              "label": "cooling",
+              "probability": 0.5483054518699646
+            },
+            {
+              "label": "sweet",
+              "probability": 0.5451013445854187
+            },
+            {
+              "label": "kokumi",
+              "probability": 0.5282624363899231
+            },
+            {
+              "label": "spicy",
+              "probability": 0.5282334089279175
+            },
+            {
+              "label": "umami",
+              "probability": 0.5280255079269409
+            },
+            {
+              "label": "mint",
+              "probability": 0.5232078433036804
+            },
+            {
+              "label": "fruity",
+              "probability": 0.515968382358551
+            },
+            {
+              "label": "caramel",
+              "probability": 0.511379063129425
+            },
+            {
+              "label": "smoky",
+              "probability": 0.5057616829872131
+            },
+            {
+              "label": "sour",
+              "probability": 0.5051629543304443
+            },
+            {
+              "label": "earthy",
+              "probability": 0.490811288356781
+            },
+            {
+              "label": "citrus",
+              "probability": 0.47836780548095703
+            },
+            {
+              "label": "sulfurous",
+              "probability": 0.4724898934364319
+            },
+            {
+              "label": "nutty",
+              "probability": 0.4724424183368683
+            },
+            {
+              "label": "salty",
+              "probability": 0.4647761881351471
+            },
+            {
+              "label": "vanilla",
+              "probability": 0.44785991311073303
+            },
+            {
+              "label": "floral",
+              "probability": 0.39855897426605225
+            },
+            {
+              "label": "fatty",
+              "probability": 0.38829272985458374
+            },
+            {
+              "label": "woody",
+              "probability": 0.37726473808288574
+            },
+            {
+              "label": "bitter",
+              "probability": 0.3691164553165436
+            },
+            {
+              "label": "herbal",
+              "probability": 0.34333616495132446
+            }
+          ]
+        },
+        {
+          "smiles": "CC(=O)O",
+          "flavors": [
+            {
+              "label": "sweet",
+              "probability": 0.728460967540741
+            },
+            {
+              "label": "astringent",
+              "probability": 0.6960080862045288
+            },
+            {
+              "label": "kokumi",
+              "probability": 0.6901571750640869
+            },
+            {
+              "label": "sour",
+              "probability": 0.6822023987770081
+            },
+            {
+              "label": "caramel",
+              "probability": 0.6529848575592041
+            },
+            {
+              "label": "citrus",
+              "probability": 0.6377229690551758
+            },
+            {
+              "label": "alcoholic",
+              "probability": 0.6305120587348938
+            },
+            {
+              "label": "salty",
+              "probability": 0.6129888892173767
+            },
+            {
+              "label": "fruity",
+              "probability": 0.5823850631713867
+            },
+            {
+              "label": "smoky",
+              "probability": 0.5736768245697021
+            },
+            {
+              "label": "vanilla",
+              "probability": 0.544342577457428
+            },
+            {
+              "label": "spicy",
+              "probability": 0.499129980802536
+            },
+            {
+              "label": "umami",
+              "probability": 0.47906696796417236
+            },
+            {
+              "label": "cooling",
+              "probability": 0.4756874740123749
+            },
+            {
+              "label": "nutty",
+              "probability": 0.4621979594230652
+            },
+            {
+              "label": "earthy",
+              "probability": 0.45017579197883606
+            },
+            {
+              "label": "metallic",
+              "probability": 0.4350774884223938
+            },
+            {
+              "label": "mint",
+              "probability": 0.42034628987312317
+            },
+            {
+              "label": "woody",
+              "probability": 0.40457507967948914
+            },
+            {
+              "label": "floral",
+              "probability": 0.37170249223709106
+            },
+            {
+              "label": "sulfurous",
+              "probability": 0.34241893887519836
+            },
+            {
+              "label": "fatty",
+              "probability": 0.3414848744869232
+            },
+            {
+              "label": "bitter",
+              "probability": 0.3310696482658386
+            },
+            {
+              "label": "herbal",
+              "probability": 0.2730066478252411
+            }
+          ]
+        },
+        {
+          "smiles": "c1ccccc1O",
+          "flavors": [
+            {
+              "label": "woody",
+              "probability": 0.7762148976325989
+            },
+            {
+              "label": "smoky",
+              "probability": 0.7738164663314819
+            },
+            {
+              "label": "herbal",
+              "probability": 0.7647581696510315
+            },
+            {
+              "label": "floral",
+              "probability": 0.6767115592956543
+            },
+            {
+              "label": "fruity",
+              "probability": 0.6571878790855408
+            },
+            {
+              "label": "nutty",
+              "probability": 0.6558695435523987
+            },
+            {
+              "label": "kokumi",
+              "probability": 0.6020838618278503
+            },
+            {
+              "label": "caramel",
+              "probability": 0.5270148515701294
+            },
+            {
+              "label": "sour",
+              "probability": 0.514676034450531
+            },
+            {
+              "label": "astringent",
+              "probability": 0.513999342918396
+            },
+            {
+              "label": "sweet",
+              "probability": 0.4944685697555542
+            },
+            {
+              "label": "alcoholic",
+              "probability": 0.4939557909965515
+            },
+            {
+              "label": "salty",
+              "probability": 0.4654478430747986
+            },
+            {
+              "label": "umami",
+              "probability": 0.46489864587783813
+            },
+            {
+              "label": "cooling",
+              "probability": 0.4628802239894867
+            },
+            {
+              "label": "earthy",
+              "probability": 0.4243053197860718
+            },
+            {
+              "label": "bitter",
+              "probability": 0.42383986711502075
+            },
+            {
+              "label": "spicy",
+              "probability": 0.40260547399520874
+            },
+            {
+              "label": "citrus",
+              "probability": 0.4025362730026245
+            },
+            {
+              "label": "mint",
+              "probability": 0.40183576941490173
+            },
+            {
+              "label": "vanilla",
+              "probability": 0.373159795999527
+            },
+            {
+              "label": "fatty",
+              "probability": 0.3465123772621155
+            },
+            {
+              "label": "sulfurous",
+              "probability": 0.34517353773117065
+            },
+            {
+              "label": "metallic",
+              "probability": 0.2492828667163849
+            }
+          ]
+        }
+      ],
+      "dataset_kind": "synthetic_benchmark"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+experiment_name: mixture_flavor_net_base
+output_dir: artifacts/mixture
+device: auto
+seed: 42
+backbone_checkpoint: artifacts/best_model.pt
+
+data:
+  single_dataset_csv: data/demo_flavor_dataset.csv
+  dataset_csv: data/mixture_dataset.csv
+  split_dir: data/mixture_splits
+  train_ratio: 0.8
+  val_ratio: 0.1
+  test_ratio: 0.1
+  random_seed: 42
+  min_components: 2
+  max_components: 5
+  max_smiles_length: 2000
+  use_rdkit_if_available: true
+  num_workers: 0
+  mixture_count: 4096
+  interaction_fraction: 0.65
+
+model:
+  d_model: 256
+  d_mix: 256
+  num_layers: 6
+  dropout: 0.3
+  hidden_1: 512
+  hidden_2: 256
+  attention_heads: 1
+  transformer_layers: 4
+  transformer_heads: 8
+  isab_inducing_points: 16
+  max_atomic_number: 43
+  edge_feature_dim: 14
+  global_feature_dim: 16
+  max_mixture_size: 20
+
+training:
+  batch_size: 64
+  max_epochs: 35
+  learning_rate: 0.0001
+  backbone_lr_scale: 0.2
+  weight_decay: 0.00001
+  warmup_steps: 100
+  label_smoothing: 0.05
+  baseline_loss_weight: 0.5
+  sparse_loss_weight: 0.01
+  delta_supervision_weight: 0.25
+  early_stopping_patience: 8
+  grad_clip_norm: 5.0
+  use_amp: true
+  freeze_backbone_steps: 200
+
+inference:
+  checkpoint_path: artifacts/mixture/best_model.pt
+  top_k: 5
+  threshold: 0.5
+  include_per_molecule_attribution: true
+  include_interaction_matrix: false
+
+report:
+  output_dir: artifacts/mixture_report
+  calibration_bins: 10

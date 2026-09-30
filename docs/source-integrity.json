@@ -1,0 +1,535 @@
+{
+  "source": "../flavorgnn",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "daf32585931ba8cdbd511e8d4cd9a557459acf8f28794564e2ef3ca57fbc4e80",
+      "bytes": 215
+    },
+    {
+      "path": "artifacts/best_model.pt",
+      "sha256": "3908eb303a619cd7a0fbce3e24c71313aea4346127ca57c6a19af3afcdf965ec",
+      "bytes": 6035125
+    },
+    {
+      "path": "artifacts/checkpoint_epoch_10.pt",
+      "sha256": "b81c35443a1777fdcf93cad1adc4a0e09174905832da71e7eae1e384e5a6a294",
+      "bytes": 6035593
+    },
+    {
+      "path": "artifacts/checkpoint_epoch_15.pt",
+      "sha256": "f5318bb80d8152c74919b0b4cc83cd0ebd59b568932e825be1ae44cfc78784f8",
+      "bytes": 6035593
+    },
+    {
+      "path": "artifacts/checkpoint_epoch_20.pt",
+      "sha256": "770f7a92067c6801251ae4a62e3b305ec44a6efbc6bcc197b51fa8792d35bf5a",
+      "bytes": 6035593
+    },
+    {
+      "path": "artifacts/checkpoint_epoch_25.pt",
+      "sha256": "4c108725f043e020f8b4ffd594263c9aef73e8247e6435cedee34164f5da0b7c",
+      "bytes": 6035593
+    },
+    {
+      "path": "artifacts/checkpoint_epoch_30.pt",
+      "sha256": "0e75daf0013e704100cdd238e6317f3f14f974309ff513dabfac9e1ab50caa1c",
+      "bytes": 6035593
+    },
+    {
+      "path": "artifacts/checkpoint_epoch_5.pt",
+      "sha256": "a4e4d85425a90ec224a41b10ba53320488d52352f432a1e373642e7d95d9fe2f",
+      "bytes": 6035541
+    },
+    {
+      "path": "artifacts/fit_summary.json",
+      "sha256": "ec506e4683562df18a18d3a732711b8b6a6e28caace4991adce2f072d9c10d5f",
+      "bytes": 22159
+    },
+    {
+      "path": "artifacts/mixture/best_model.pt",
+      "sha256": "3a29d214dddae029b5fccff1bf950924ff524bcee86ab893137e29333e7c4561",
+      "bytes": 23526287
+    },
+    {
+      "path": "artifacts/mixture/checkpoint_epoch_10.pt",
+      "sha256": "4a8794a7649addd5d0834ee6244ae2914865102573d005adc982d268ba35f4f0",
+      "bytes": 23527475
+    },
+    {
+      "path": "artifacts/mixture/checkpoint_epoch_15.pt",
+      "sha256": "6718882efbba54b002de959dccc283820df7c333eec2f0e00896f67488b88e28",
+      "bytes": 23527475
+    },
+    {
+      "path": "artifacts/mixture/checkpoint_epoch_20.pt",
+      "sha256": "37cfc5c6c97a1ea14b0a9ad91c49c2a704cb1f48c1ba84790f492e4456612900",
+      "bytes": 23527475
+    },
+    {
+      "path": "artifacts/mixture/checkpoint_epoch_25.pt",
+      "sha256": "e718b92abee53e2b8b0acd5ba9d557bf7ac77b469dd9a582e5f0541cb1239073",
+      "bytes": 23527475
+    },
+    {
+      "path": "artifacts/mixture/checkpoint_epoch_30.pt",
+      "sha256": "2872d8a90dd707d7da248997fba7140f584ce69259ad2f0518c53ba278bc86c4",
+      "bytes": 23527475
+    },
+    {
+      "path": "artifacts/mixture/checkpoint_epoch_35.pt",
+      "sha256": "de48f4454a15667e9f5dd868d54eee47dafa3d98dfadfb1faa9037001cd5f31f",
+      "bytes": 23527475
+    },
+    {
+      "path": "artifacts/mixture/checkpoint_epoch_5.pt",
+      "sha256": "15eb377476a14b4e8809cf5616646ee5eb28f891ff9eadc4a01767d9a26cde0c",
+      "bytes": 23527343
+    },
+    {
+      "path": "artifacts/mixture/fit_summary.json",
+      "sha256": "2c93d4559a2badb7685285d67efe6e00f457fa882224f48b384752874d68895d",
+      "bytes": 62440
+    },
+    {
+      "path": "artifacts/mixture/test_metrics.json",
+      "sha256": "3288af11c8c3e49f05873fbf7b17f127d76c5ec5f4f482ec4f066135e8c27642",
+      "bytes": 875
+    },
+    {
+      "path": "artifacts/mixture/train_summary.json",
+      "sha256": "2c93d4559a2badb7685285d67efe6e00f457fa882224f48b384752874d68895d",
+      "bytes": 62440
+    },
+    {
+      "path": "artifacts/mixture_report/calibration.png",
+      "sha256": "3a55780ef8ea21686d85e16eb1c67d0c55d55492e489d8f9374de34b19fc0503",
+      "bytes": 94261
+    },
+    {
+      "path": "artifacts/mixture_report/interaction_delta_hist.png",
+      "sha256": "4c4289f91b84dbf6f1a64fa9e9ccd4e02c498df0c9315318640ff54cbff6da2b",
+      "bytes": 50981
+    },
+    {
+      "path": "artifacts/mixture_report/label_metrics.png",
+      "sha256": "da79a1a5804d1d0cde4801f68599c3bf23c5582a6dc690cdccf7c6008a829199",
+      "bytes": 118330
+    },
+    {
+      "path": "artifacts/mixture_report/metrics.json",
+      "sha256": "4c5091607c4fe8c05467c22db6e4db710072f413ebcb611a6a0f849714a4d503",
+      "bytes": 679
+    },
+    {
+      "path": "artifacts/mixture_report/training_curves.png",
+      "sha256": "48778565c1bf2ba4c374b0e0725ca0668cf19edc533918185f4eddf6472ade49",
+      "bytes": 120233
+    },
+    {
+      "path": "artifacts/test_metrics.json",
+      "sha256": "a4f157e3ba725ce46403d92a440bc6bd317f22c5ddcafd177dad28827ff490c4",
+      "bytes": 302
+    },
+    {
+      "path": "artifacts/train_summary.json",
+      "sha256": "ec506e4683562df18a18d3a732711b8b6a6e28caace4991adce2f072d9c10d5f",
+      "bytes": 22159
+    },
+    {
+      "path": "configs/base.yaml",
+      "sha256": "f224b90a8d990efd71dfb6aadb729ad5fa822f0a013d856fc5c8e6b06570a114",
+      "bytes": 860
+    },
+    {
+      "path": "configs/mixture_base.yaml",
+      "sha256": "a49080e5f3a4fab78a5d83fc4c6abce3a3acef8e6bb6ceb5e2c7f1e6db42b97b",
+      "bytes": 1380
+    },
+    {
+      "path": "configs/mixture_ubuntu_4090.yaml",
+      "sha256": "0070a434b8507d27c895d28793b766840a25c0b87d9cee9f8a32168eb50b4ce0",
+      "bytes": 1404
+    },
+    {
+      "path": "configs/ubuntu_4090.yaml",
+      "sha256": "2c598586f2a2f96c22e1fdcba1c28334a5d52264fdd0688d4d2cb7a31b5e9462",
+      "bytes": 886
+    },
+    {
+      "path": "data/demo_flavor_dataset.csv",
+      "sha256": "e64b2c4cf9e7e85b9ee76422f44c937d7908c62e637d4789fff6c9c4e1726a09",
+      "bytes": 6197
+    },
+    {
+      "path": "data/mixture_dataset.csv",
+      "sha256": "7aa7209813757e015938baa7d34af78b0530cb23639700d0f7764475f1b82479",
+      "bytes": 1679810
+    },
+    {
+      "path": "data/mixture_splits/test.csv",
+      "sha256": "afc666beefe581b38a6fb9e9aac8971e30067836dd81f982b8ceb857481f3490",
+      "bytes": 174420
+    },
+    {
+      "path": "data/mixture_splits/train.csv",
+      "sha256": "9348b2ab7a96157a4016b9452c5311b4a8a0bee06e749253e4df082277b6b4b5",
+      "bytes": 1339166
+    },
+    {
+      "path": "data/mixture_splits/val.csv",
+      "sha256": "66311f428ee1564d24afda1d34f8f4f55fa325810d79b7c96ed4767b96978fef",
+      "bytes": 166626
+    },
+    {
+      "path": "data/splits/test.csv",
+      "sha256": "a3076963fb2def57917344227f6b63b316faba0ac8c576e91f5da577a32c8ed2",
+      "bytes": 747
+    },
+    {
+      "path": "data/splits/train.csv",
+      "sha256": "87fe9e9cd3b6d3336e18b82b536c06a4947b7b6c3e18a8384a506456f547d8f1",
+      "bytes": 4846
+    },
+    {
+      "path": "data/splits/val.csv",
+      "sha256": "b72076217462d47eef7d6469896a787aa98cd1686adb466891db7a452ca26e6d",
+      "bytes": 658
+    },
+    {
+      "path": "examples/predict_samples.json",
+      "sha256": "463bddbbe35c1736e15ed6103cade0e08facba491418ca46911e8decb02a0196",
+      "bytes": 175
+    },
+    {
+      "path": "flavorgnn/__init__.py",
+      "sha256": "35b20b4308ec22ad598609b7e57b04e289a78aa870d3bf46b94a7992716ae118",
+      "bytes": 197
+    },
+    {
+      "path": "flavorgnn/api/app.py",
+      "sha256": "c4019136cbd2ca46899315c8878e59022cf2fe5ccf4a5ba2ba49b006809650f8",
+      "bytes": 2318
+    },
+    {
+      "path": "flavorgnn/api/schemas.py",
+      "sha256": "96586082b7de5862ef5942ccdfce288457c469d9b1af89c21874503ecb3030ae",
+      "bytes": 1160
+    },
+    {
+      "path": "flavorgnn/checkpoint.py",
+      "sha256": "40435aafac1ab31e5fb8456ac0bbae4d7fe7184c33862ec4f64ba7116066d363",
+      "bytes": 863
+    },
+    {
+      "path": "flavorgnn/config.py",
+      "sha256": "e7cbca16f2521dffb3c4f50f4d86264aae854ea79348a3bf0cb216223075fe39",
+      "bytes": 4504
+    },
+    {
+      "path": "flavorgnn/constants.py",
+      "sha256": "de90872674ae42e15fd6fa403afb3c0c551d23385765ff68362b66ca56043ea6",
+      "bytes": 561
+    },
+    {
+      "path": "flavorgnn/data/__init__.py",
+      "sha256": "bdee13fb631650bbae7a4befbf2f4de02e98a093205065cafe490cb40959eca9",
+      "bytes": 477
+    },
+    {
+      "path": "flavorgnn/data/dataset.py",
+      "sha256": "77c95d2e7a2d62221362686983477d2a7b4733bb38ab753a4b93ffbce40c057b",
+      "bytes": 4921
+    },
+    {
+      "path": "flavorgnn/data/graph_builder.py",
+      "sha256": "edb244bec3be13090d662e93fdd36fca869350d9f3f99798c560b20e737cf7a3",
+      "bytes": 15039
+    },
+    {
+      "path": "flavorgnn/data/split.py",
+      "sha256": "5a4eac225889af6200e1b03979ae250a47e4a03279d04a6db8533d49f9544b41",
+      "bytes": 3292
+    },
+    {
+      "path": "flavorgnn/inference/__init__.py",
+      "sha256": "cff9c193dbd7f863de5a455e34d8bdbd60db108f0c604e96b318573545119920",
+      "bytes": 122
+    },
+    {
+      "path": "flavorgnn/inference/predictor.py",
+      "sha256": "c9e47823337e75221621c4ca2c9221ae92e865bf04eb4a71bcbd806833e3162b",
+      "bytes": 4640
+    },
+    {
+      "path": "flavorgnn/model/__init__.py",
+      "sha256": "ca39ffdf762f90da422c1880ce4202b0816bf3b2b044859344636c470905ba7f",
+      "bytes": 101
+    },
+    {
+      "path": "flavorgnn/model/layers.py",
+      "sha256": "b40f9ca68cf974b1692b2090a8a2edb0d7ccefd18ad052af9f8819b3b79b276f",
+      "bytes": 2942
+    },
+    {
+      "path": "flavorgnn/model/mpnn.py",
+      "sha256": "c44d0ee49b10c6d2f2db8b982942c6af1417fe175882c7afa025bbf04f97b848",
+      "bytes": 2816
+    },
+    {
+      "path": "flavorgnn/training/__init__.py",
+      "sha256": "70d14c6024e8e543d9c2d2f7a0fb6e586334b6583db76a7e372b2cefed48eb3d",
+      "bytes": 327
+    },
+    {
+      "path": "flavorgnn/training/losses.py",
+      "sha256": "0cd37bbf45bc15e5cacd032cbd157dbe3417e59b2e2d5c9d843db837b815d34a",
+      "bytes": 1087
+    },
+    {
+      "path": "flavorgnn/training/metrics.py",
+      "sha256": "745b600ad4ffccc302ad06964420640ab6b103c06c1d898e95a4a8024e7d582d",
+      "bytes": 2506
+    },
+    {
+      "path": "flavorgnn/training/trainer.py",
+      "sha256": "f46e5e611131013f7753cd48c99d083716ced6fa6383f4cee2b080869495f079",
+      "bytes": 6876
+    },
+    {
+      "path": "FlavorGNN_Technical_Spec.docx",
+      "sha256": "93359e348931f390639544bd23b28142ec23282573f88d7345869fe6ae0c1a6e",
+      "bytes": 20694
+    },
+    {
+      "path": "MIXTURE_TECHNICAL_REPORT.md",
+      "sha256": "d4db84e63ce1524d218eb0920a7f327977445ca7b381b08f729576a05a5c794e",
+      "bytes": 8566
+    },
+    {
+      "path": "MIXTURE_USAGE.md",
+      "sha256": "908da8cf024a6d912cc8e99bb48adb13c87cbd1fc5c49f8bf7a3c4a01c4e9f1a",
+      "bytes": 3899
+    },
+    {
+      "path": "mixtureflavorgnn/__init__.py",
+      "sha256": "e7b2f33499ce4caac45696c79f654f283312d37ce7782cc88ad4ee4f5a4628b0",
+      "bytes": 161
+    },
+    {
+      "path": "mixtureflavorgnn/api/__init__.py",
+      "sha256": "e4a0d7f635860e9d98ef12301f57621d39b387339c2f754e93e6bd97675a216f",
+      "bytes": 42
+    },
+    {
+      "path": "mixtureflavorgnn/api/app.py",
+      "sha256": "1226a12b05281fa93f8305586a17a97381e3b9ee4e14eae194767bd241dde68a",
+      "bytes": 973
+    },
+    {
+      "path": "mixtureflavorgnn/api/schemas.py",
+      "sha256": "cd04826f30da9de1a1388eeede53be56ee4e0891f89d493cb3224c725e2d9876",
+      "bytes": 929
+    },
+    {
+      "path": "mixtureflavorgnn/config.py",
+      "sha256": "d8f056f631ee9cb8412c7ad3b8cb7a404caf19483477331944c4ef95778da4e4",
+      "bytes": 3560
+    },
+    {
+      "path": "mixtureflavorgnn/constants.py",
+      "sha256": "005e1e4bc9043660175f13410da3a2c99d4c470f3fcd106f7fee7bf263eb6226",
+      "bytes": 200
+    },
+    {
+      "path": "mixtureflavorgnn/data/__init__.py",
+      "sha256": "2c7070c9bf653dd38f218011c45c63dd8a9eb5969eb465fc35cfde0c6a40cf1e",
+      "bytes": 408
+    },
+    {
+      "path": "mixtureflavorgnn/data/mixture_builder.py",
+      "sha256": "f05b13b624cdd05a221b5e30a4c5e571315fc0d23887dcf86242196567a4b298",
+      "bytes": 13026
+    },
+    {
+      "path": "mixtureflavorgnn/data/mixture_dataset.py",
+      "sha256": "673a17fa038a49c9afc3257acc798122eb04bd69db9ac6375dffaff31357bcb9",
+      "bytes": 11410
+    },
+    {
+      "path": "mixtureflavorgnn/data/subset_sampler.py",
+      "sha256": "01497a938e49db2b24d05771e963e38b463316bdb300ffc5b92eb90609bbac21",
+      "bytes": 837
+    },
+    {
+      "path": "mixtureflavorgnn/inference/__init__.py",
+      "sha256": "fa35b4afc7ff7cbbed05b06f95220f247ff889d0d2f5daa3bfd9c6b89f345660",
+      "bytes": 152
+    },
+    {
+      "path": "mixtureflavorgnn/inference/predictor.py",
+      "sha256": "d7ca63b7833346688825a37795e0c803edccbd59a10e532b53a83311afdbf591",
+      "bytes": 7039
+    },
+    {
+      "path": "mixtureflavorgnn/model/__init__.py",
+      "sha256": "ed6c0f97ed391fc977d0b6190794f93dd76ac9da8620841bb4f61c7dff56260d",
+      "bytes": 326
+    },
+    {
+      "path": "mixtureflavorgnn/model/mixture_net.py",
+      "sha256": "7c293f3612b565099748bd08673c91ed427f3e1ad4f0fe887ac8dc11bddfc380",
+      "bytes": 6839
+    },
+    {
+      "path": "mixtureflavorgnn/model/mol_encoder.py",
+      "sha256": "3e8abf2ab0f69ea627765a02a4b71ee59e45e117bcc28e514236c9f3b3e2e3db",
+      "bytes": 3813
+    },
+    {
+      "path": "mixtureflavorgnn/model/set_transformer.py",
+      "sha256": "3d55d82335a8d9f1ef9cc704927b2fdb569b105b6d068876ae164b0205718261",
+      "bytes": 3800
+    },
+    {
+      "path": "mixtureflavorgnn/training/__init__.py",
+      "sha256": "66c06ea6fd5e41013fff6d8ae777e80d0b960183fcd8156ca5992eff6be7d10c",
+      "bytes": 373
+    },
+    {
+      "path": "mixtureflavorgnn/training/losses.py",
+      "sha256": "111be9349108c6f543504b9ec441bd84d674eb8c10a7adcc04442fe9904ebf4a",
+      "bytes": 2557
+    },
+    {
+      "path": "mixtureflavorgnn/training/metrics.py",
+      "sha256": "9d59e795815e6724278455a0bb5457115dabbe70732d323d886cb9742d89252c",
+      "bytes": 4848
+    },
+    {
+      "path": "mixtureflavorgnn/training/trainer.py",
+      "sha256": "a23f499e477ac57f1456282e813bf389fdef8816f1b9b5e2480f86ab86b0e45a",
+      "bytes": 14239
+    },
+    {
+      "path": "PROJECT_DESIGN.md",
+      "sha256": "a462c79db7583a1dedced40f2863968a801d32833a080ddb90b4d5acefb41cb0",
+      "bytes": 5109
+    },
+    {
+      "path": "PROJECT_DOCUMENTATION.md",
+      "sha256": "d8add102e01471d3d56a5b37198f01283e9ba7e6de802d224133ac68c0c9b39d",
+      "bytes": 10196
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "41f043c188d1a08820a1bd14239693528666b38b56070f58ca3e4bead4001171",
+      "bytes": 832
+    },
+    {
+      "path": "pytest.ini",
+      "sha256": "792b7da480fb3e8e038135c33fd66a093b712409e214b182673c6a568a1f5275",
+      "bytes": 72
+    },
+    {
+      "path": "README.md",
+      "sha256": "f46bf71350c3417ef482fd6df19478a5e09f9c467962452838b99ecca8cd6c7d",
+      "bytes": 2810
+    },
+    {
+      "path": "requirements-full.txt",
+      "sha256": "127e1d9980bbbb17a1074b36a35e5c155866ea67e09eeeb8a5b067e6205e0828",
+      "bytes": 174
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "53525d9202efdf6677977d6d773a507a9db975f1ae6199cb1633225c2bc6f241",
+      "bytes": 224
+    },
+    {
+      "path": "scripts/build_demo_dataset.py",
+      "sha256": "238f3b6d990d87d24a521ecfe1d9580e127acadceb02afb07cfffdbcdec5f626",
+      "bytes": 6621
+    },
+    {
+      "path": "scripts/build_mixture_dataset.py",
+      "sha256": "13150fc1be80e5c11b5280b407e527774dd9f671a376b8ffd3726615a30f2ed4",
+      "bytes": 1878
+    },
+    {
+      "path": "scripts/evaluate.py",
+      "sha256": "29ad27d82fb4ce07d38ec92decef37231fff2e5670a863150200789325398329",
+      "bytes": 3200
+    },
+    {
+      "path": "scripts/evaluate_mixture.py",
+      "sha256": "2a8861244ba02389001e84a8f23d1907b20fea77bb4d527b4f998135548108c7",
+      "bytes": 11114
+    },
+    {
+      "path": "scripts/predict.py",
+      "sha256": "a26729585db7622530069b80b420121edd0574b025923c3253eb42c790f6f7c6",
+      "bytes": 1780
+    },
+    {
+      "path": "scripts/predict_mixture.py",
+      "sha256": "922627383bc2571d546415804c79b957e52d05f9ce7d7acdfe572bc8cbc65b43",
+      "bytes": 1390
+    },
+    {
+      "path": "scripts/run_api.py",
+      "sha256": "fd1e6322234c34df296e9d820bf09de95ef57f3999e04b56228a6e74b36e72cc",
+      "bytes": 648
+    },
+    {
+      "path": "scripts/train.py",
+      "sha256": "8368ed2fb933fecfb91bd51de712661b4cf9fb772ca3e8da45a23011b4564758",
+      "bytes": 4512
+    },
+    {
+      "path": "scripts/train_mixture.py",
+      "sha256": "0182c862e2d7635e09eed0a2ae8b2220f7100a1b85463d6bfce9fdae39ecaba8",
+      "bytes": 5066
+    },
+    {
+      "path": "SPEC_EXTRACT.txt",
+      "sha256": "bbd844a68f6dde5511c51d34d74289151ba7a17dc79d81645434a0b714c0e4d2",
+      "bytes": 15063
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha256": "7f855d186fc6dd2e45177074ffa848632fb7f1f14fde9c5ba54f66cf8251e0eb",
+      "bytes": 551
+    },
+    {
+      "path": "tests/test_dataset.py",
+      "sha256": "28b4e28238a5781ef7a944441fa5dde3725fd6725375288c29c72949f0cfbaad",
+      "bytes": 1245
+    },
+    {
+      "path": "tests/test_mixture_dataset.py",
+      "sha256": "1361f7ce119fd7fd59d40091c22c74aec9a3f52de683469463384257d3747d7f",
+      "bytes": 1906
+    },
+    {
+      "path": "tests/test_mixture_metrics.py",
+      "sha256": "139daf2bd928c68a0de9bcf11f4aebd6c6c202d8a03d709fd92e3d6bdeeedc32",
+      "bytes": 1067
+    },
+    {
+      "path": "tests/test_mixture_model.py",
+      "sha256": "80eeaccbece0fc1b8473576061f74d2ba0631ad258afe9d37971a4063205c003",
+      "bytes": 1737
+    },
+    {
+      "path": "tests/test_model.py",
+      "sha256": "308462f144af2409cb3f61e05023c7971e115db447bbd6b0635c903349c82bd3",
+      "bytes": 1158
+    },
+    {
+      "path": "tests/test_split.py",
+      "sha256": "f737fae3b3b2946ab04c00e042bc6fe64ff131b17abf9eb038e2a6fdbb8e0959",
+      "bytes": 1130
+    }
+  ]
+}

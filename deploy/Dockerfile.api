@@ -1,0 +1,21 @@
+FROM python:3.13-slim
+ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/app/backend \
+    OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 CUDA_VISIBLE_DEVICES=-1
+WORKDIR /app
+RUN apt-get update && apt-get install -y --no-install-recommends libgomp1 libxrender1 libxext6 \
+    && rm -rf /var/lib/apt/lists/* \
+    && useradd --uid 10001 --create-home appuser \
+    && mkdir -p /data/backups && chown -R appuser:appuser /data
+COPY backend/requirements.txt backend/requirements-web.lock.txt /app/backend/
+RUN pip install --no-cache-dir torch==2.11.0 --index-url https://download.pytorch.org/whl/cpu \
+    && pip install --no-cache-dir -r backend/requirements.txt -c backend/requirements-web.lock.txt
+COPY backend /app/backend
+COPY vendor /app/vendor
+COPY examples /app/examples
+COPY scripts/restore_database.py /app/scripts/restore_database.py
+USER appuser
+EXPOSE 8000
+HEALTHCHECK --interval=30s --timeout=5s --start-period=60s --retries=3 \
+    CMD python -c "import json,urllib.request; assert json.load(urllib.request.urlopen('http://127.0.0.1:8000/api/health',timeout=4))['status']=='ok'"
+# One process owns the model, SQLite lifecycle and daily backup scheduler.
+CMD ["python", "-m", "uvicorn", "mixtureflavor_web.api:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1", "--no-access-log", "--limit-concurrency", "32"]
